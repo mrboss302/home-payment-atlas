@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology & Data Sources | Home Payment Atlas</title>
+<meta name="description" content="How Home Payment Atlas calculates mortgage payments and where our home-value data comes from, including Zillow Research (ZHVI) and our default assumptions.">
+<link rel="canonical" href="https://homepaymentatlas.com/methodology/">
+<meta property="og:title" content="Methodology & Data Sources | Home Payment Atlas">
+<meta property="og:description" content="How Home Payment Atlas calculates mortgage payments and where our home-value data comes from, including Zillow Research (ZHVI) and our default assumptions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://homepaymentatlas.com/methodology/">
+<meta property="og:site_name" content="Home Payment Atlas">
+<meta property="og:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="theme-color" content="#faf7f2">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<link rel="manifest" href="../site.webmanifest">
+<script>window.atlasDataLayer=window.atlasDataLayer||[];window.trackAtlasEvent=window.trackAtlasEvent||function(n,p){try{window.atlasDataLayer.push({event:n,payload:p||{},ts:Date.now()});if(window.gtag){window.gtag('event',n,p||{});}if(window.plausible){window.plausible(n,{props:p||{}});}}catch(e){}};</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3840656918521680" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://homepaymentatlas.com/"},{"@type":"ListItem","position":2,"name":"Methodology","item":"https://homepaymentatlas.com/methodology/"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2b2622" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../mortgage-calculator/index.html">Calculator</a>
+      <a href="../states/index.html">States</a>
+      <a href="../methodology/index.html">Methodology</a>
+      <a href="../privacy/index.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page" style="color:var(--ink-700)">Methodology</span></nav>
+<section class="section prose"><div class="wrap prose">
+  <h1>Methodology</h1>
+  <p>Home Payment Atlas is a planning tool. We aim to be transparent about every number so you can judge how well it fits your situation. The most important distinction on this site is between <strong>measured data</strong> (real values we read from Zillow) and <strong>calculated assumptions</strong> (figures this tool estimates and that you can change).</p>
+
+  <div class="card" style="padding:24px;margin:18px 0">
+    <h3 style="margin-top:0">What's measured vs. what's calculated</h3>
+    <table class="data" style="margin-top:6px">
+      <thead><tr><th>Figure</th><th style="text-align:left">Where it comes from</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left">Typical / starter / higher-budget home values</td><td style="text-align:left"><strong>Measured</strong> — Zillow ZHVI</td></tr>
+        <tr><td style="text-align:left">Single-family, condo, by-bedroom values</td><td style="text-align:left"><strong>Measured</strong> — Zillow ZHVI</td></tr>
+        <tr><td style="text-align:left">Principal &amp; interest, total interest, payoff</td><td style="text-align:left"><strong>Calculated</strong> — amortization formula</td></tr>
+        <tr><td style="text-align:left">Property tax, insurance, PMI, cash needed</td><td style="text-align:left"><strong>Calculated</strong> — editable assumptions</td></tr>
+        <tr><td style="text-align:left">Income needed &amp; comfort rating</td><td style="text-align:left"><strong>Calculated</strong> — ratio guidelines</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Home-value data (measured)</h2>
+  <ul>
+    <li><strong>Source:</strong> Zillow Research Home Value Index (ZHVI), state level, smoothed and seasonally adjusted.</li>
+    <li><strong>Typical</strong> value is the middle price tier (35th–65th percentile). <strong>Starter</strong> uses the lower tier and <strong>higher-budget</strong> the upper tier.</li>
+    <li>We also surface single-family, condo/co-op, and bedroom-count values where available.</li>
+    <li>We extract the latest available month for each state (currently 2026-05).</li>
+    <li>Values are Zillow's estimates and may not match current listings, appraisals, or lender valuations.</li>
+  </ul>
+
+  <h2>Mortgage math (calculated)</h2>
+  <p>Monthly principal and interest use the standard fixed-rate formula:</p>
+  <p style="font-family:var(--serif);font-size:1.1rem">M = P · r(1 + r)ⁿ / ((1 + r)ⁿ − 1)</p>
+  <ul>
+    <li><strong>P</strong> = loan principal (price − down payment)</li>
+    <li><strong>r</strong> = monthly interest rate (annual rate ÷ 12)</li>
+    <li><strong>n</strong> = number of monthly payments (years × 12)</li>
+    <li>If the interest rate is 0%, we divide the loan evenly across all payments.</li>
+  </ul>
+
+  <h2>Default assumptions (calculated)</h2>
+  <ul>
+    <li>Interest rate: 6.5% (editable)</li>
+    <li>Property tax: 1.1% of home value per year by default. <strong>State pages use a state-specific effective rate</strong> (see below), and you can always enter your own dollar amount.</li>
+    <li>Homeowners insurance: 0.35% of home value per year, unless you enter a dollar amount</li>
+    <li>PMI: 0.5% of the loan per year, applied only when the down payment is under 20%</li>
+    <li>Closing costs: about 3% of the price, included in "estimated cash needed"</li>
+    <li>Income needed: based on a 28% housing-cost-to-income guideline</li>
+  </ul>
+
+  <h2>State-specific property tax</h2>
+  <p>On state pages, the calculator prefills an approximate <strong>effective property-tax rate</strong> for that state (annual property tax as a percentage of home value), rather than a single national figure. Please read these as planning estimates, not your actual bill:</p>
+  <ul>
+    <li><strong>State rates are planning estimates.</strong> They are statewide approximations compiled from public data, not official figures for your property.</li>
+    <li><strong>County and city rates vary widely</strong> within every state — two homes of the same value in the same state can owe very different amounts.</li>
+    <li><strong>Exemptions and assessments vary.</strong> Homestead exemptions, senior or veteran exemptions, assessment caps, and how often a county reassesses can all change what you actually pay.</li>
+    <li><strong>Enter your local figure for accuracy.</strong> For a realistic result, replace the default with your county's effective rate or your actual annual property-tax dollar amount.</li>
+  </ul>
+  <p>States without a specific rate fall back to the 1.1% national default.</p>
+
+  <h2>Affordability labels</h2>
+  <p>When you enter income, we compare your total housing payment to gross monthly income: up to 28% is <strong>Comfortable</strong>, up to 36% <strong>Manageable</strong>, up to 43% <strong>Tight</strong>, and above that <strong>Stretching</strong>. These are general guidelines, not lending decisions, approvals, or qualifications.</p>
+
+  <h2>Limitations</h2>
+  <ul>
+    <li>Rent comparisons use Zillow ZORI rent data and are available on our city pages; they are snapshots, not a complete rent-vs-buy decision (which also depends on maintenance, time horizon, opportunity cost, appreciation, and transaction costs).</li>
+    <li>We cover all states plus a curated first set of city pages. We add cities deliberately rather than generating every place, to keep each page genuinely useful.</li>
+    <li>Taxes, insurance, PMI, and rates vary widely by location, lender, and borrower — always confirm with the relevant professional.</li>
+  </ul>
+  <div class="disclaimer"><strong>Estimates only.</strong> This tool is for education and planning. It is not financial advice, a loan offer, or a guarantee of interest rates, loan approval, property taxes, insurance costs, PMI, or home values. Your actual costs will depend on your lender, location, and circumstances. Home-value examples use Zillow Research (ZHVI) data and may not match current listings or appraisals.</div>
+</div></section><footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="../index.html" style="margin-bottom:12px"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+        <p style="max-width:36ch">Know the monthly cost before you tour the house. Clear, calm home-payment planning built on Zillow Research home-value data.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../mortgage-calculator/index.html">Mortgage Calculator</a>
+        <a href="../rent-vs-buy-calculator/index.html">Rent vs Buy Calculator</a>
+        <a href="../pmi-calculator/index.html">PMI Calculator</a>
+        <a href="../closing-cost-calculator/index.html">Closing Cost Calculator</a>
+        <a href="../refinance-calculator/index.html">Refinance Calculator</a>
+      </div>
+      <div>
+        <h4>States</h4>
+        <a href="../states/index.html">All States</a>
+        <a href="../states/maryland/index.html">Maryland</a>
+        <a href="../states/texas/index.html">Texas</a>
+        <a href="../states/california/index.html">California</a>
+        <a href="../states/florida/index.html">Florida</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="../methodology/index.html">Methodology</a>
+        <a href="../about/index.html">About</a>
+        <a href="../privacy/index.html">Privacy &amp; Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0">Estimates only — not financial advice, a loan offer, or a guarantee of rates, approval, taxes, insurance, or home values. Home-value examples use Zillow Research (ZHVI) data and may not reflect current listings or appraisals. © 2026 Home Payment Atlas.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

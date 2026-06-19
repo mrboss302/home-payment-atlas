@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "description": "Curated first set of city/metro markets we may generate pages for. Pages are NOT generated yet — this is the staged, quality-first expansion list. priority 1 = generate first.",
+    "intendedUrlPattern": "/states/{stateSlug}/{citySlug}/",
+    "note": "metroName/metroSlug are hints for later metro pages and may need to match Zillow CBSA naming exactly."
+  },
+  "markets": [
+    { "cityName": "Baltimore", "stateName": "Maryland", "stateCode": "MD", "citySlug": "baltimore", "stateSlug": "maryland", "priority": 1, "intendedUrl": "/states/maryland/baltimore/", "metroName": "Baltimore, MD", "metroSlug": "baltimore-md" },
+    { "cityName": "Washington", "stateName": "District of Columbia", "stateCode": "DC", "citySlug": "washington", "stateSlug": "district-of-columbia", "priority": 1, "intendedUrl": "/states/district-of-columbia/washington/", "metroName": "Washington, DC", "metroSlug": "washington-dc" },
+    { "cityName": "Philadelphia", "stateName": "Pennsylvania", "stateCode": "PA", "citySlug": "philadelphia", "stateSlug": "pennsylvania", "priority": 1, "intendedUrl": "/states/pennsylvania/philadelphia/", "metroName": "Philadelphia, PA", "metroSlug": "philadelphia-pa" },
+    { "cityName": "New York", "stateName": "New York", "stateCode": "NY", "citySlug": "new-york", "stateSlug": "new-york", "priority": 1, "intendedUrl": "/states/new-york/new-york/", "metroName": "New York, NY", "metroSlug": "new-york-ny" },
+    { "cityName": "Boston", "stateName": "Massachusetts", "stateCode": "MA", "citySlug": "boston", "stateSlug": "massachusetts", "priority": 1, "intendedUrl": "/states/massachusetts/boston/", "metroName": "Boston, MA", "metroSlug": "boston-ma" },
+    { "cityName": "Atlanta", "stateName": "Georgia", "stateCode": "GA", "citySlug": "atlanta", "stateSlug": "georgia", "priority": 1, "intendedUrl": "/states/georgia/atlanta/", "metroName": "Atlanta, GA", "metroSlug": "atlanta-ga" },
+    { "cityName": "Charlotte", "stateName": "North Carolina", "stateCode": "NC", "citySlug": "charlotte", "stateSlug": "north-carolina", "priority": 2, "intendedUrl": "/states/north-carolina/charlotte/", "metroName": "Charlotte, NC", "metroSlug": "charlotte-nc" },
+    { "cityName": "Raleigh", "stateName": "North Carolina", "stateCode": "NC", "citySlug": "raleigh", "stateSlug": "north-carolina", "priority": 2, "intendedUrl": "/states/north-carolina/raleigh/", "metroName": "Raleigh, NC", "metroSlug": "raleigh-nc" },
+    { "cityName": "Nashville", "stateName": "Tennessee", "stateCode": "TN", "citySlug": "nashville", "stateSlug": "tennessee", "priority": 2, "intendedUrl": "/states/tennessee/nashville/", "metroName": "Nashville, TN", "metroSlug": "nashville-tn" },
+    { "cityName": "Austin", "stateName": "Texas", "stateCode": "TX", "citySlug": "austin", "stateSlug": "texas", "priority": 1, "intendedUrl": "/states/texas/austin/", "metroName": "Austin, TX", "metroSlug": "austin-tx" },
+    { "cityName": "Dallas", "stateName": "Texas", "stateCode": "TX", "citySlug": "dallas", "stateSlug": "texas", "priority": 1, "intendedUrl": "/states/texas/dallas/", "metroName": "Dallas-Fort Worth, TX", "metroSlug": "dallas-fort-worth-tx" },
+    { "cityName": "Houston", "stateName": "Texas", "stateCode": "TX", "citySlug": "houston", "stateSlug": "texas", "priority": 1, "intendedUrl": "/states/texas/houston/", "metroName": "Houston, TX", "metroSlug": "houston-tx" },
+    { "cityName": "San Antonio", "stateName": "Texas", "stateCode": "TX", "citySlug": "san-antonio", "stateSlug": "texas", "priority": 2, "intendedUrl": "/states/texas/san-antonio/", "metroName": "San Antonio, TX", "metroSlug": "san-antonio-tx" },
+    { "cityName": "Phoenix", "stateName": "Arizona", "stateCode": "AZ", "citySlug": "phoenix", "stateSlug": "arizona", "priority": 1, "intendedUrl": "/states/arizona/phoenix/", "metroName": "Phoenix, AZ", "metroSlug": "phoenix-az" },
+    { "cityName": "Las Vegas", "stateName": "Nevada", "stateCode": "NV", "citySlug": "las-vegas", "stateSlug": "nevada", "priority": 2, "intendedUrl": "/states/nevada/las-vegas/", "metroName": "Las Vegas, NV", "metroSlug": "las-vegas-nv" },
+    { "cityName": "Denver", "stateName": "Colorado", "stateCode": "CO", "citySlug": "denver", "stateSlug": "colorado", "priority": 1, "intendedUrl": "/states/colorado/denver/", "metroName": "Denver, CO", "metroSlug": "denver-co" },
+    { "cityName": "Seattle", "stateName": "Washington", "stateCode": "WA", "citySlug": "seattle", "stateSlug": "washington", "priority": 1, "intendedUrl": "/states/washington/seattle/", "metroName": "Seattle, WA", "metroSlug": "seattle-wa" },
+    { "cityName": "Portland", "stateName": "Oregon", "stateCode": "OR", "citySlug": "portland", "stateSlug": "oregon", "priority": 2, "intendedUrl": "/states/oregon/portland/", "metroName": "Portland, OR", "metroSlug": "portland-or" },
+    { "cityName": "Los Angeles", "stateName": "California", "stateCode": "CA", "citySlug": "los-angeles", "stateSlug": "california", "priority": 1, "intendedUrl": "/states/california/los-angeles/", "metroName": "Los Angeles, CA", "metroSlug": "los-angeles-ca" },
+    { "cityName": "San Diego", "stateName": "California", "stateCode": "CA", "citySlug": "san-diego", "stateSlug": "california", "priority": 1, "intendedUrl": "/states/california/san-diego/", "metroName": "San Diego, CA", "metroSlug": "san-diego-ca" },
+    { "cityName": "San Francisco", "stateName": "California", "stateCode": "CA", "citySlug": "san-francisco", "stateSlug": "california", "priority": 1, "intendedUrl": "/states/california/san-francisco/", "metroName": "San Francisco, CA", "metroSlug": "san-francisco-ca" },
+    { "cityName": "Sacramento", "stateName": "California", "stateCode": "CA", "citySlug": "sacramento", "stateSlug": "california", "priority": 2, "intendedUrl": "/states/california/sacramento/", "metroName": "Sacramento, CA", "metroSlug": "sacramento-ca" },
+    { "cityName": "Tampa", "stateName": "Florida", "stateCode": "FL", "citySlug": "tampa", "stateSlug": "florida", "priority": 2, "intendedUrl": "/states/florida/tampa/", "metroName": "Tampa, FL", "metroSlug": "tampa-fl" },
+    { "cityName": "Orlando", "stateName": "Florida", "stateCode": "FL", "citySlug": "orlando", "stateSlug": "florida", "priority": 2, "intendedUrl": "/states/florida/orlando/", "metroName": "Orlando, FL", "metroSlug": "orlando-fl" },
+    { "cityName": "Miami", "stateName": "Florida", "stateCode": "FL", "citySlug": "miami", "stateSlug": "florida", "priority": 1, "intendedUrl": "/states/florida/miami/", "metroName": "Miami-Fort Lauderdale, FL", "metroSlug": "miami-fort-lauderdale-fl" }
+  ]
+}

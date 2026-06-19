@@ -1,0 +1,83 @@
+name: Build and deploy to GitHub Pages
+
+# Builds the static site and deploys it to GitHub Pages.
+#  - push to main / manual run  → build from committed data and deploy
+#  - monthly (17th, after Zillow's ~16th update) → refresh data, build, deploy,
+#    and commit the refreshed state CSVs back to the repo
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 17 * *" # 06:00 UTC on the 17th of each month
+
+# Pages deploy needs these; contents:write lets the monthly run commit fresh data.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; don't cancel an in-progress deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  SITE_URL: https://homepaymentatlas.com
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # On scheduled/manual runs only, pull the latest Zillow state data first.
+      - name: Refresh Zillow data (scheduled/manual)
+        if: github.event_name != 'push'
+        run: node scripts/download-zillow-data.mjs --state-only
+
+      - name: Build site
+        run: node build/build.mjs
+
+      - name: Validate site
+        run: node scripts/validate-site.mjs
+
+      # Custom-domain file for GitHub Pages (apex domain).
+      - name: Write CNAME
+        run: echo "homepaymentatlas.com" > site/CNAME
+
+      # Persist refreshed data back to the repo (scheduled/manual runs only).
+      - name: Commit refreshed data
+        if: github.event_name != 'push'
+        run: |
+          node scripts/clean-expansion-csvs.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add csv/State_*.csv csv/zillow-manifest.json
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update Zillow data"
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

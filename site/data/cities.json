@@ -1,0 +1,833 @@
+{
+  "generatedAt": "2026-06-19T19:06:24.444Z",
+  "defaults": {
+    "rate": 6.5,
+    "termYears": 30,
+    "taxRatePct": 1.1,
+    "insuranceRatePct": 0.35,
+    "pmiRatePct": 0.5,
+    "hoaMonthly": 0,
+    "frontEndDti": 0.28
+  },
+  "count": 16,
+  "rentCoverage": 16,
+  "skipped": [],
+  "cities": [
+    {
+      "regionType": "city",
+      "cityName": "Phoenix",
+      "stateName": "Arizona",
+      "stateCode": "AZ",
+      "citySlug": "phoenix",
+      "stateSlug": "arizona",
+      "zillowRegionId": "40326",
+      "metroName": "Phoenix-Mesa-Chandler, AZ",
+      "countyName": "Maricopa County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/arizona/phoenix/",
+      "homeValues": {
+        "starter": 309233,
+        "typical": 411563,
+        "higher": 669610,
+        "singleFamily": 422917,
+        "condo": 261703,
+        "bedrooms": {
+          "1": 229939,
+          "2": 312033,
+          "3": 411836,
+          "4": 522391,
+          "5plus": 740060
+        }
+      },
+      "rent": {
+        "typicalRent": 1577,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 2081,
+        "monthly10Down": 2341,
+        "monthly5Down": 2471,
+        "totalMonthly20Down": 2414,
+        "totalMonthly10Down": 2828,
+        "totalMonthly5Down": 2967
+      },
+      "incomeNeededTypical": 103457,
+      "taxRatePct": 0.62,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 423681,
+        "vsStatePct": -3,
+        "nationalTypical": 354135,
+        "vsNationalPct": 16,
+        "sfrCondoGap": 62
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Los Angeles",
+      "stateName": "California",
+      "stateCode": "CA",
+      "citySlug": "los-angeles",
+      "stateSlug": "california",
+      "zillowRegionId": "12447",
+      "metroName": "Los Angeles-Long Beach-Anaheim, CA",
+      "countyName": "Los Angeles County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/california/los-angeles/",
+      "homeValues": {
+        "starter": 663057,
+        "typical": 951035,
+        "higher": 1751990,
+        "singleFamily": 1028697,
+        "condo": 639569,
+        "bedrooms": {
+          "1": 546216,
+          "2": 753001,
+          "3": 944419,
+          "4": 1202708,
+          "5plus": 2033373
+        }
+      },
+      "rent": {
+        "typicalRent": 2755,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 4809,
+        "monthly10Down": 5410,
+        "monthly5Down": 5711,
+        "totalMonthly20Down": 5649,
+        "totalMonthly10Down": 6607,
+        "totalMonthly5Down": 6927
+      },
+      "incomeNeededTypical": 242100,
+      "taxRatePct": 0.71,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 775550,
+        "vsStatePct": 23,
+        "nationalTypical": 354135,
+        "vsNationalPct": 169,
+        "sfrCondoGap": 61
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "San Diego",
+      "stateName": "California",
+      "stateCode": "CA",
+      "citySlug": "san-diego",
+      "stateSlug": "california",
+      "zillowRegionId": "54296",
+      "metroName": "San Diego-Chula Vista-Carlsbad, CA",
+      "countyName": "San Diego County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/california/san-diego/",
+      "homeValues": {
+        "starter": 660466,
+        "typical": 1007800,
+        "higher": 1744381,
+        "singleFamily": 1154746,
+        "condo": 644475,
+        "bedrooms": {
+          "1": 487056,
+          "2": 739660,
+          "3": 1033366,
+          "4": 1346576,
+          "5plus": 1981026
+        }
+      },
+      "rent": {
+        "typicalRent": 2987,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 5096,
+        "monthly10Down": 5733,
+        "monthly5Down": 6051,
+        "totalMonthly20Down": 5986,
+        "totalMonthly10Down": 7001,
+        "totalMonthly5Down": 7341
+      },
+      "incomeNeededTypical": 256543,
+      "taxRatePct": 0.71,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 775550,
+        "vsStatePct": 30,
+        "nationalTypical": 354135,
+        "vsNationalPct": 185,
+        "sfrCondoGap": 79
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "San Francisco",
+      "stateName": "California",
+      "stateCode": "CA",
+      "citySlug": "san-francisco",
+      "stateSlug": "california",
+      "zillowRegionId": "20330",
+      "metroName": "San Francisco-Oakland-Berkeley, CA",
+      "countyName": "San Francisco County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/california/san-francisco/",
+      "homeValues": {
+        "starter": 917256,
+        "typical": 1393773,
+        "higher": 2219381,
+        "singleFamily": 1563267,
+        "condo": 1070489,
+        "bedrooms": {
+          "1": 757416,
+          "2": 1265132,
+          "3": 1704395,
+          "4": 2145718,
+          "5plus": 2663089
+        }
+      },
+      "rent": {
+        "typicalRent": 4253,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 7048,
+        "monthly10Down": 7929,
+        "monthly5Down": 8369,
+        "totalMonthly20Down": 8279,
+        "totalMonthly10Down": 9682,
+        "totalMonthly5Down": 10152
+      },
+      "incomeNeededTypical": 354814,
+      "taxRatePct": 0.71,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 775550,
+        "vsStatePct": 80,
+        "nationalTypical": 354135,
+        "vsNationalPct": 294,
+        "sfrCondoGap": 46
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Denver",
+      "stateName": "Colorado",
+      "stateCode": "CO",
+      "citySlug": "denver",
+      "stateSlug": "colorado",
+      "zillowRegionId": "11093",
+      "metroName": "Denver-Aurora-Lakewood, CO",
+      "countyName": "Denver County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/colorado/denver/",
+      "homeValues": {
+        "starter": 361140,
+        "typical": 539712,
+        "higher": 923767,
+        "singleFamily": 585946,
+        "condo": 314002,
+        "bedrooms": {
+          "1": 291928,
+          "2": 443746,
+          "3": 576457,
+          "4": 753126,
+          "5plus": 1037766
+        }
+      },
+      "rent": {
+        "typicalRent": 1860,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 2729,
+        "monthly10Down": 3070,
+        "monthly5Down": 3241,
+        "totalMonthly20Down": 3116,
+        "totalMonthly10Down": 3659,
+        "totalMonthly5Down": 3841
+      },
+      "incomeNeededTypical": 133543,
+      "taxRatePct": 0.51,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 543270,
+        "vsStatePct": -1,
+        "nationalTypical": 354135,
+        "vsNationalPct": 52,
+        "sfrCondoGap": 87
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Washington",
+      "stateName": "District of Columbia",
+      "stateCode": "DC",
+      "citySlug": "washington",
+      "stateSlug": "district-of-columbia",
+      "zillowRegionId": "41568",
+      "metroName": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+      "countyName": "District of Columbia",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/district-of-columbia/washington/",
+      "homeValues": {
+        "starter": 345887,
+        "typical": 581881,
+        "higher": 1146276,
+        "singleFamily": 743052,
+        "condo": 420106,
+        "bedrooms": {
+          "1": 367939,
+          "2": 564611,
+          "3": 656380,
+          "4": 997018,
+          "5plus": 1717185
+        }
+      },
+      "rent": {
+        "typicalRent": 2497,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 2942,
+        "monthly10Down": 3310,
+        "monthly5Down": 3494,
+        "totalMonthly20Down": 3388,
+        "totalMonthly10Down": 3974,
+        "totalMonthly5Down": 4170
+      },
+      "incomeNeededTypical": 145200,
+      "taxRatePct": 0.57,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 582077,
+        "vsStatePct": 0,
+        "nationalTypical": 354135,
+        "vsNationalPct": 64,
+        "sfrCondoGap": 77
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Miami",
+      "stateName": "Florida",
+      "stateCode": "FL",
+      "citySlug": "miami",
+      "stateSlug": "florida",
+      "zillowRegionId": "12700",
+      "metroName": "Miami-Fort Lauderdale-Pompano Beach, FL",
+      "countyName": "Miami-Dade County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/florida/miami/",
+      "homeValues": {
+        "starter": 354027,
+        "typical": 581864,
+        "higher": 961612,
+        "singleFamily": 663333,
+        "condo": 379438,
+        "bedrooms": {
+          "1": 348027,
+          "2": 447441,
+          "3": 620423,
+          "4": 779872,
+          "5plus": 1244263
+        }
+      },
+      "rent": {
+        "typicalRent": 2997,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 2942,
+        "monthly10Down": 3310,
+        "monthly5Down": 3494,
+        "totalMonthly20Down": 3529,
+        "totalMonthly10Down": 4115,
+        "totalMonthly5Down": 4311
+      },
+      "incomeNeededTypical": 151243,
+      "taxRatePct": 0.86,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 377578,
+        "vsStatePct": 54,
+        "nationalTypical": 354135,
+        "vsNationalPct": 64,
+        "sfrCondoGap": 75
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Atlanta",
+      "stateName": "Georgia",
+      "stateCode": "GA",
+      "citySlug": "atlanta",
+      "stateSlug": "georgia",
+      "zillowRegionId": "37211",
+      "metroName": "Atlanta-Sandy Springs-Alpharetta, GA",
+      "countyName": "Fulton County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/georgia/atlanta/",
+      "homeValues": {
+        "starter": 220369,
+        "typical": 389027,
+        "higher": 836471,
+        "singleFamily": 445221,
+        "condo": 289239,
+        "bedrooms": {
+          "1": 242431,
+          "2": 327746,
+          "3": 384983,
+          "4": 604651,
+          "5plus": 1103964
+        }
+      },
+      "rent": {
+        "typicalRent": 1888,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 1967,
+        "monthly10Down": 2213,
+        "monthly5Down": 2336,
+        "totalMonthly20Down": 2372,
+        "totalMonthly10Down": 2764,
+        "totalMonthly5Down": 2895
+      },
+      "incomeNeededTypical": 101657,
+      "taxRatePct": 0.9,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 334465,
+        "vsStatePct": 16,
+        "nationalTypical": 354135,
+        "vsNationalPct": 10,
+        "sfrCondoGap": 54
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Baltimore",
+      "stateName": "Maryland",
+      "stateCode": "MD",
+      "citySlug": "baltimore",
+      "stateSlug": "maryland",
+      "zillowRegionId": "3523",
+      "metroName": "Baltimore-Columbia-Towson, MD",
+      "countyName": "Baltimore City",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/maryland/baltimore/",
+      "homeValues": {
+        "starter": 102902,
+        "typical": 191986,
+        "higher": 340952,
+        "singleFamily": 189881,
+        "condo": 219830,
+        "bedrooms": {
+          "1": 156234,
+          "2": 200509,
+          "3": 208847,
+          "4": 283232,
+          "5plus": 388952
+        }
+      },
+      "rent": {
+        "typicalRent": 1786,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 971,
+        "monthly10Down": 1092,
+        "monthly5Down": 1153,
+        "totalMonthly20Down": 1195,
+        "totalMonthly10Down": 1388,
+        "totalMonthly5Down": 1453
+      },
+      "incomeNeededTypical": 51214,
+      "taxRatePct": 1.05,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 434033,
+        "vsStatePct": -56,
+        "nationalTypical": 354135,
+        "vsNationalPct": -46,
+        "sfrCondoGap": -14
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Boston",
+      "stateName": "Massachusetts",
+      "stateCode": "MA",
+      "citySlug": "boston",
+      "stateSlug": "massachusetts",
+      "zillowRegionId": "44269",
+      "metroName": "Boston-Cambridge-Newton, MA-NH",
+      "countyName": "Suffolk County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/massachusetts/boston/",
+      "homeValues": {
+        "starter": 553187,
+        "typical": 786208,
+        "higher": 1345933,
+        "singleFamily": 843759,
+        "condo": 736201,
+        "bedrooms": {
+          "1": 619836,
+          "2": 776052,
+          "3": 832296,
+          "4": 961681,
+          "5plus": 1122826
+        }
+      },
+      "rent": {
+        "typicalRent": 3454,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 3975,
+        "monthly10Down": 4472,
+        "monthly5Down": 4721,
+        "totalMonthly20Down": 4952,
+        "totalMonthly10Down": 5743,
+        "totalMonthly5Down": 6008
+      },
+      "incomeNeededTypical": 212229,
+      "taxRatePct": 1.14,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 667265,
+        "vsStatePct": 18,
+        "nationalTypical": 354135,
+        "vsNationalPct": 122,
+        "sfrCondoGap": 15
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "New York",
+      "stateName": "New York",
+      "stateCode": "NY",
+      "citySlug": "new-york",
+      "stateSlug": "new-york",
+      "zillowRegionId": "6181",
+      "metroName": "New York-Newark-Jersey City, NY-NJ-PA",
+      "countyName": "Queens County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/new-york/new-york/",
+      "homeValues": {
+        "starter": 499480,
+        "typical": 817745,
+        "higher": 1569225,
+        "singleFamily": 869562,
+        "condo": 721419,
+        "bedrooms": {
+          "1": 629367,
+          "2": 831646,
+          "3": 871392,
+          "4": 1066123,
+          "5plus": 1419926
+        }
+      },
+      "rent": {
+        "typicalRent": 4049,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 4135,
+        "monthly10Down": 4652,
+        "monthly5Down": 4910,
+        "totalMonthly20Down": 5328,
+        "totalMonthly10Down": 6151,
+        "totalMonthly5Down": 6427
+      },
+      "incomeNeededTypical": 228343,
+      "taxRatePct": 1.4,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 517805,
+        "vsStatePct": 58,
+        "nationalTypical": 354135,
+        "vsNationalPct": 131,
+        "sfrCondoGap": 21
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Philadelphia",
+      "stateName": "Pennsylvania",
+      "stateCode": "PA",
+      "citySlug": "philadelphia",
+      "stateSlug": "pennsylvania",
+      "zillowRegionId": "13271",
+      "metroName": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+      "countyName": "Philadelphia County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/pennsylvania/philadelphia/",
+      "homeValues": {
+        "starter": 138660,
+        "typical": 236883,
+        "higher": 412667,
+        "singleFamily": 230445,
+        "condo": 290117,
+        "bedrooms": {
+          "1": 266567,
+          "2": 268825,
+          "3": 207330,
+          "4": 310083,
+          "5plus": 446942
+        }
+      },
+      "rent": {
+        "typicalRent": 1806,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 1198,
+        "monthly10Down": 1348,
+        "monthly5Down": 1422,
+        "totalMonthly20Down": 1561,
+        "totalMonthly10Down": 1800,
+        "totalMonthly5Down": 1879
+      },
+      "incomeNeededTypical": 66900,
+      "taxRatePct": 1.49,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 289277,
+        "vsStatePct": -18,
+        "nationalTypical": 354135,
+        "vsNationalPct": -33,
+        "sfrCondoGap": -21
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Austin",
+      "stateName": "Texas",
+      "stateCode": "TX",
+      "citySlug": "austin",
+      "stateSlug": "texas",
+      "zillowRegionId": "10221",
+      "metroName": "Austin-Round Rock-Georgetown, TX",
+      "countyName": "Travis County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/texas/austin/",
+      "homeValues": {
+        "starter": 340408,
+        "typical": 510722,
+        "higher": 931255,
+        "singleFamily": 542287,
+        "condo": 363158,
+        "bedrooms": {
+          "1": 300185,
+          "2": 408712,
+          "3": 467989,
+          "4": 670481,
+          "5plus": 1054718
+        }
+      },
+      "rent": {
+        "typicalRent": 1595,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 2582,
+        "monthly10Down": 2905,
+        "monthly5Down": 3067,
+        "totalMonthly20Down": 3446,
+        "totalMonthly10Down": 3961,
+        "totalMonthly5Down": 4133
+      },
+      "incomeNeededTypical": 147686,
+      "taxRatePct": 1.68,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 302550,
+        "vsStatePct": 69,
+        "nationalTypical": 354135,
+        "vsNationalPct": 44,
+        "sfrCondoGap": 49
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Dallas",
+      "stateName": "Texas",
+      "stateCode": "TX",
+      "citySlug": "dallas",
+      "stateSlug": "texas",
+      "zillowRegionId": "38128",
+      "metroName": "Dallas-Fort Worth-Arlington, TX",
+      "countyName": "Dallas County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/texas/dallas/",
+      "homeValues": {
+        "starter": 189527,
+        "typical": 312024,
+        "higher": 779391,
+        "singleFamily": 326854,
+        "condo": 213446,
+        "bedrooms": {
+          "1": 146055,
+          "2": 227517,
+          "3": 292062,
+          "4": 613365,
+          "5plus": 1400016
+        }
+      },
+      "rent": {
+        "typicalRent": 1648,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 1578,
+        "monthly10Down": 1775,
+        "monthly5Down": 1874,
+        "totalMonthly20Down": 2106,
+        "totalMonthly10Down": 2420,
+        "totalMonthly5Down": 2525
+      },
+      "incomeNeededTypical": 90257,
+      "taxRatePct": 1.68,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 302550,
+        "vsStatePct": 3,
+        "nationalTypical": 354135,
+        "vsNationalPct": -12,
+        "sfrCondoGap": 53
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Houston",
+      "stateName": "Texas",
+      "stateCode": "TX",
+      "citySlug": "houston",
+      "stateSlug": "texas",
+      "zillowRegionId": "39051",
+      "metroName": "Houston-The Woodlands-Sugar Land, TX",
+      "countyName": "Harris County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/texas/houston/",
+      "homeValues": {
+        "starter": 178046,
+        "typical": 264952,
+        "higher": 498660,
+        "singleFamily": 271206,
+        "condo": 134271,
+        "bedrooms": {
+          "1": 114410,
+          "2": 169574,
+          "3": 248599,
+          "4": 331461,
+          "5plus": 567729
+        }
+      },
+      "rent": {
+        "typicalRent": 1566,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 1340,
+        "monthly10Down": 1507,
+        "monthly5Down": 1591,
+        "totalMonthly20Down": 1788,
+        "totalMonthly10Down": 2055,
+        "totalMonthly5Down": 2144
+      },
+      "incomeNeededTypical": 76629,
+      "taxRatePct": 1.68,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 302550,
+        "vsStatePct": -12,
+        "nationalTypical": 354135,
+        "vsNationalPct": -25,
+        "sfrCondoGap": 102
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    },
+    {
+      "regionType": "city",
+      "cityName": "Seattle",
+      "stateName": "Washington",
+      "stateCode": "WA",
+      "citySlug": "seattle",
+      "stateSlug": "washington",
+      "zillowRegionId": "16037",
+      "metroName": "Seattle-Tacoma-Bellevue, WA",
+      "countyName": "King County",
+      "latestDate": "2026-05",
+      "priority": 1,
+      "intendedUrl": "/states/washington/seattle/",
+      "homeValues": {
+        "starter": 572518,
+        "typical": 865273,
+        "higher": 1376380,
+        "singleFamily": 948784,
+        "condo": 480660,
+        "bedrooms": {
+          "1": 417136,
+          "2": 697924,
+          "3": 925577,
+          "4": 1235560,
+          "5plus": 1431410
+        }
+      },
+      "rent": {
+        "typicalRent": 2196,
+        "latestRentDate": "2026-05"
+      },
+      "payments": {
+        "monthly20Down": 4375,
+        "monthly10Down": 4922,
+        "monthly5Down": 5196,
+        "totalMonthly20Down": 5255,
+        "totalMonthly10Down": 6126,
+        "totalMonthly5Down": 6418
+      },
+      "incomeNeededTypical": 225214,
+      "taxRatePct": 0.87,
+      "taxIsStateSpecific": true,
+      "comparisons": {
+        "stateTypical": 603870,
+        "vsStatePct": 43,
+        "nationalTypical": 354135,
+        "vsNationalPct": 144,
+        "sfrCondoGap": 97
+      },
+      "sourceNotes": "Home values: Zillow Research City ZHVI (smoothed, seasonally adjusted). Rent: Zillow Research City ZORI. Payments, income, taxes, PMI and closing costs are calculated estimates."
+    }
+  ]
+}

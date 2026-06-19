@@ -1,0 +1,5 @@
+# Home Payment Atlas
+User-agent: *
+Allow: /
+
+Sitemap: https://homepaymentatlas.com/sitemap.xml

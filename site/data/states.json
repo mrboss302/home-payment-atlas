@@ -1,0 +1,2127 @@
+{
+  "latestDate": "2026-05",
+  "defaults": {
+    "rate": 6.5,
+    "termYears": 30,
+    "taxRatePct": 1.1,
+    "insuranceRatePct": 0.35,
+    "pmiRatePct": 0.5,
+    "hoaMonthly": 0,
+    "frontEndDti": 0.28
+  },
+  "dataGroups": {
+    "stateLaunch": {
+      "found": 10,
+      "required": true
+    },
+    "cityZhvi": {
+      "found": 10,
+      "required": false
+    },
+    "metroZhvi": {
+      "found": 10,
+      "required": false
+    },
+    "rentZori": {
+      "found": 10,
+      "required": false
+    },
+    "payment": {
+      "found": 0,
+      "required": false
+    }
+  },
+  "regions": [
+    {
+      "regionType": "state",
+      "regionName": "Alabama",
+      "state": "AL",
+      "slug": "alabama",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.4,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 121090,
+        "typical": 239515,
+        "higher": 429900,
+        "singleFamily": 237488,
+        "condo": 341410,
+        "bedrooms": {
+          "1": 172740,
+          "2": 164305,
+          "3": 239676,
+          "4": 375549,
+          "5plus": 526831
+        }
+      },
+      "payments": {
+        "monthly20Down": 1211,
+        "monthly10Down": 1363,
+        "monthly5Down": 1438,
+        "totalMonthly20Down": 1361,
+        "totalMonthly10Down": 1602,
+        "totalMonthly5Down": 1683
+      },
+      "incomeNeededTypical": 58329,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -32,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 44,
+        "totalStates": 51,
+        "sfrCondoGap": -30
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Alaska",
+      "state": "AK",
+      "slug": "alaska",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.04,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 251971,
+        "typical": 395622,
+        "higher": 573659,
+        "singleFamily": 412442,
+        "condo": 268079,
+        "bedrooms": {
+          "1": 185622,
+          "2": 280884,
+          "3": 408106,
+          "4": 529842,
+          "5plus": 632730
+        }
+      },
+      "payments": {
+        "monthly20Down": 2000,
+        "monthly10Down": 2251,
+        "monthly5Down": 2376,
+        "totalMonthly20Down": 2459,
+        "totalMonthly10Down": 2857,
+        "totalMonthly5Down": 2990
+      },
+      "incomeNeededTypical": 105386,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 12,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 23,
+        "totalStates": 51,
+        "sfrCondoGap": 54
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Arizona",
+      "state": "AZ",
+      "slug": "arizona",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.62,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 298157,
+        "typical": 423681,
+        "higher": 692088,
+        "singleFamily": 432959,
+        "condo": 267011,
+        "bedrooms": {
+          "1": 211853,
+          "2": 331553,
+          "3": 409725,
+          "4": 511771,
+          "5plus": 714697
+        }
+      },
+      "payments": {
+        "monthly20Down": 2142,
+        "monthly10Down": 2410,
+        "monthly5Down": 2544,
+        "totalMonthly20Down": 2485,
+        "totalMonthly10Down": 2912,
+        "totalMonthly5Down": 3054
+      },
+      "incomeNeededTypical": 106500,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 20,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 18,
+        "totalStates": 51,
+        "sfrCondoGap": 62
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Arkansas",
+      "state": "AR",
+      "slug": "arkansas",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.62,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 116679,
+        "typical": 226473,
+        "higher": 397804,
+        "singleFamily": 226357,
+        "condo": 242851,
+        "bedrooms": {
+          "1": 138909,
+          "2": 166049,
+          "3": 245073,
+          "4": 377447,
+          "5plus": 554075
+        }
+      },
+      "payments": {
+        "monthly20Down": 1145,
+        "monthly10Down": 1288,
+        "monthly5Down": 1360,
+        "totalMonthly20Down": 1328,
+        "totalMonthly10Down": 1556,
+        "totalMonthly5Down": 1633
+      },
+      "incomeNeededTypical": 56914,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -36,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 47,
+        "totalStates": 51,
+        "sfrCondoGap": -7
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "California",
+      "state": "CA",
+      "slug": "california",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.71,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 473542,
+        "typical": 775550,
+        "higher": 1454005,
+        "singleFamily": 800416,
+        "condo": 630758,
+        "bedrooms": {
+          "1": 477668,
+          "2": 621004,
+          "3": 739720,
+          "4": 941141,
+          "5plus": 1292450
+        }
+      },
+      "payments": {
+        "monthly20Down": 3922,
+        "monthly10Down": 4412,
+        "monthly5Down": 4657,
+        "totalMonthly20Down": 4607,
+        "totalMonthly10Down": 5388,
+        "totalMonthly5Down": 5649
+      },
+      "incomeNeededTypical": 197443,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 119,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 2,
+        "totalStates": 51,
+        "sfrCondoGap": 27
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Colorado",
+      "state": "CO",
+      "slug": "colorado",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.51,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 362532,
+        "typical": 543270,
+        "higher": 896829,
+        "singleFamily": 557073,
+        "condo": 376623,
+        "bedrooms": {
+          "1": 308281,
+          "2": 402304,
+          "3": 518335,
+          "4": 653770,
+          "5plus": 801737
+        }
+      },
+      "payments": {
+        "monthly20Down": 2747,
+        "monthly10Down": 3090,
+        "monthly5Down": 3262,
+        "totalMonthly20Down": 3136,
+        "totalMonthly10Down": 3684,
+        "totalMonthly5Down": 3867
+      },
+      "incomeNeededTypical": 134400,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 53,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 7,
+        "totalStates": 51,
+        "sfrCondoGap": 48
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Connecticut",
+      "state": "CT",
+      "slug": "connecticut",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.79,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 306112,
+        "typical": 447447,
+        "higher": 779282,
+        "singleFamily": 476653,
+        "condo": 303278,
+        "bedrooms": {
+          "1": 219646,
+          "2": 327507,
+          "3": 438400,
+          "4": 635537,
+          "5plus": 1030730
+        }
+      },
+      "payments": {
+        "monthly20Down": 2263,
+        "monthly10Down": 2545,
+        "monthly5Down": 2687,
+        "totalMonthly20Down": 3060,
+        "totalMonthly10Down": 3511,
+        "totalMonthly5Down": 3662
+      },
+      "incomeNeededTypical": 131143,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 26,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 15,
+        "totalStates": 51,
+        "sfrCondoGap": 57
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Delaware",
+      "state": "DE",
+      "slug": "delaware",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.57,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 278545,
+        "typical": 410212,
+        "higher": 643757,
+        "singleFamily": 409755,
+        "condo": 418696,
+        "bedrooms": {
+          "1": 203316,
+          "2": 283172,
+          "3": 370320,
+          "4": 522665,
+          "5plus": 731644
+        }
+      },
+      "payments": {
+        "monthly20Down": 2074,
+        "monthly10Down": 2334,
+        "monthly5Down": 2463,
+        "totalMonthly20Down": 2389,
+        "totalMonthly10Down": 2802,
+        "totalMonthly5Down": 2940
+      },
+      "incomeNeededTypical": 102386,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 16,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 21,
+        "totalStates": 51,
+        "sfrCondoGap": -2
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "District of Columbia",
+      "state": "DC",
+      "slug": "district-of-columbia",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.57,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 346035,
+        "typical": 582077,
+        "higher": 1146760,
+        "singleFamily": 743623,
+        "condo": 420107,
+        "bedrooms": {
+          "1": 367948,
+          "2": 564599,
+          "3": 656391,
+          "4": 997163,
+          "5plus": 1717469
+        }
+      },
+      "payments": {
+        "monthly20Down": 2943,
+        "monthly10Down": 3311,
+        "monthly5Down": 3495,
+        "totalMonthly20Down": 3390,
+        "totalMonthly10Down": 3976,
+        "totalMonthly5Down": 4172
+      },
+      "incomeNeededTypical": 145286,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 64,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 5,
+        "totalStates": 51,
+        "sfrCondoGap": 77
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Florida",
+      "state": "FL",
+      "slug": "florida",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.86,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 233915,
+        "typical": 377578,
+        "higher": 682923,
+        "singleFamily": 399008,
+        "condo": 264735,
+        "bedrooms": {
+          "1": 181351,
+          "2": 269116,
+          "3": 380115,
+          "4": 508567,
+          "5plus": 777351
+        }
+      },
+      "payments": {
+        "monthly20Down": 1909,
+        "monthly10Down": 2148,
+        "monthly5Down": 2267,
+        "totalMonthly20Down": 2290,
+        "totalMonthly10Down": 2670,
+        "totalMonthly5Down": 2797
+      },
+      "incomeNeededTypical": 98143,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 7,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 24,
+        "totalStates": 51,
+        "sfrCondoGap": 51
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Georgia",
+      "state": "GA",
+      "slug": "georgia",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.9,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 199132,
+        "typical": 334465,
+        "higher": 564472,
+        "singleFamily": 337403,
+        "condo": 273224,
+        "bedrooms": {
+          "1": 214575,
+          "2": 225143,
+          "3": 296533,
+          "4": 422230,
+          "5plus": 605970
+        }
+      },
+      "payments": {
+        "monthly20Down": 1691,
+        "monthly10Down": 1903,
+        "monthly5Down": 2008,
+        "totalMonthly20Down": 2040,
+        "totalMonthly10Down": 2376,
+        "totalMonthly5Down": 2489
+      },
+      "incomeNeededTypical": 87429,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -6,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 30,
+        "totalStates": 51,
+        "sfrCondoGap": 23
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Hawaii",
+      "state": "HI",
+      "slug": "hawaii",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.29,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 452076,
+        "typical": 832183,
+        "higher": 1422223,
+        "singleFamily": 979451,
+        "condo": 544628,
+        "bedrooms": {
+          "1": 438109,
+          "2": 595547,
+          "3": 915651,
+          "4": 1177981,
+          "5plus": 1350464
+        }
+      },
+      "payments": {
+        "monthly20Down": 4208,
+        "monthly10Down": 4734,
+        "monthly5Down": 4997,
+        "totalMonthly20Down": 4652,
+        "totalMonthly10Down": 5490,
+        "totalMonthly5Down": 5770
+      },
+      "incomeNeededTypical": 199371,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 135,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 1,
+        "totalStates": 51,
+        "sfrCondoGap": 80
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Idaho",
+      "state": "ID",
+      "slug": "idaho",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.63,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 340086,
+        "typical": 480645,
+        "higher": 777082,
+        "singleFamily": 480411,
+        "condo": 491161,
+        "bedrooms": {
+          "1": 347274,
+          "2": 373082,
+          "3": 460086,
+          "4": 546719,
+          "5plus": 629627
+        }
+      },
+      "payments": {
+        "monthly20Down": 2430,
+        "monthly10Down": 2734,
+        "monthly5Down": 2886,
+        "totalMonthly20Down": 2823,
+        "totalMonthly10Down": 3307,
+        "totalMonthly5Down": 3469
+      },
+      "incomeNeededTypical": 120986,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 36,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 13,
+        "totalStates": 51,
+        "sfrCondoGap": -2
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Illinois",
+      "state": "IL",
+      "slug": "illinois",
+      "latestDate": "2026-05",
+      "taxRatePct": 2.08,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 153966,
+        "typical": 294136,
+        "higher": 511116,
+        "singleFamily": 300077,
+        "condo": 268374,
+        "bedrooms": {
+          "1": 199738,
+          "2": 239731,
+          "3": 302181,
+          "4": 445363,
+          "5plus": 593899
+        }
+      },
+      "payments": {
+        "monthly20Down": 1487,
+        "monthly10Down": 1673,
+        "monthly5Down": 1766,
+        "totalMonthly20Down": 2083,
+        "totalMonthly10Down": 2379,
+        "totalMonthly5Down": 2478
+      },
+      "incomeNeededTypical": 89271,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -17,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 35,
+        "totalStates": 51,
+        "sfrCondoGap": 12
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Indiana",
+      "state": "IN",
+      "slug": "indiana",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.84,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 157087,
+        "typical": 259711,
+        "higher": 425104,
+        "singleFamily": 261096,
+        "condo": 230319,
+        "bedrooms": {
+          "1": 126193,
+          "2": 168688,
+          "3": 255648,
+          "4": 364499,
+          "5plus": 489086
+        }
+      },
+      "payments": {
+        "monthly20Down": 1313,
+        "monthly10Down": 1477,
+        "monthly5Down": 1559,
+        "totalMonthly20Down": 1571,
+        "totalMonthly10Down": 1832,
+        "totalMonthly5Down": 1920
+      },
+      "incomeNeededTypical": 67329,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -27,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 41,
+        "totalStates": 51,
+        "sfrCondoGap": 13
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Iowa",
+      "state": "IA",
+      "slug": "iowa",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.52,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 131287,
+        "typical": 238019,
+        "higher": 414989,
+        "singleFamily": 242401,
+        "condo": 184735,
+        "bedrooms": {
+          "1": 118646,
+          "2": 163202,
+          "3": 243124,
+          "4": 334175,
+          "5plus": 456115
+        }
+      },
+      "payments": {
+        "monthly20Down": 1204,
+        "monthly10Down": 1354,
+        "monthly5Down": 1429,
+        "totalMonthly20Down": 1574,
+        "totalMonthly10Down": 1814,
+        "totalMonthly5Down": 1894
+      },
+      "incomeNeededTypical": 67457,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -33,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 45,
+        "totalStates": 51,
+        "sfrCondoGap": 31
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Kansas",
+      "state": "KS",
+      "slug": "kansas",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.34,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 121950,
+        "typical": 249382,
+        "higher": 456942,
+        "singleFamily": 250267,
+        "condo": 194578,
+        "bedrooms": {
+          "1": 88787,
+          "2": 134869,
+          "3": 241314,
+          "4": 385983,
+          "5plus": 458569
+        }
+      },
+      "payments": {
+        "monthly20Down": 1261,
+        "monthly10Down": 1419,
+        "monthly5Down": 1497,
+        "totalMonthly20Down": 1612,
+        "totalMonthly10Down": 1863,
+        "totalMonthly5Down": 1947
+      },
+      "incomeNeededTypical": 69086,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -30,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 42,
+        "totalStates": 51,
+        "sfrCondoGap": 29
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Kentucky",
+      "state": "KY",
+      "slug": "kentucky",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.83,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 126126,
+        "typical": 235060,
+        "higher": 394700,
+        "singleFamily": 235636,
+        "condo": 225586,
+        "bedrooms": {
+          "1": 134722,
+          "2": 175518,
+          "3": 254628,
+          "4": 381820,
+          "5plus": 508466
+        }
+      },
+      "payments": {
+        "monthly20Down": 1189,
+        "monthly10Down": 1337,
+        "monthly5Down": 1411,
+        "totalMonthly20Down": 1420,
+        "totalMonthly10Down": 1656,
+        "totalMonthly5Down": 1736
+      },
+      "incomeNeededTypical": 60857,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -34,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 46,
+        "totalStates": 51,
+        "sfrCondoGap": 4
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Louisiana",
+      "state": "LA",
+      "slug": "louisiana",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.56,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 114413,
+        "typical": 216254,
+        "higher": 363076,
+        "singleFamily": 217588,
+        "condo": 161197,
+        "bedrooms": {
+          "1": 129948,
+          "2": 136602,
+          "3": 216851,
+          "4": 325877,
+          "5plus": 455248
+        }
+      },
+      "payments": {
+        "monthly20Down": 1093,
+        "monthly10Down": 1230,
+        "monthly5Down": 1299,
+        "totalMonthly20Down": 1257,
+        "totalMonthly10Down": 1475,
+        "totalMonthly5Down": 1548
+      },
+      "incomeNeededTypical": 53871,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -39,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 49,
+        "totalStates": 51,
+        "sfrCondoGap": 35
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Maine",
+      "state": "ME",
+      "slug": "maine",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.24,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 251091,
+        "typical": 416614,
+        "higher": 700955,
+        "singleFamily": 413201,
+        "condo": 448929,
+        "bedrooms": {
+          "1": 278155,
+          "2": 368382,
+          "3": 447004,
+          "4": 552622,
+          "5plus": 684571
+        }
+      },
+      "payments": {
+        "monthly20Down": 2107,
+        "monthly10Down": 2370,
+        "monthly5Down": 2502,
+        "totalMonthly20Down": 2659,
+        "totalMonthly10Down": 3078,
+        "totalMonthly5Down": 3219
+      },
+      "incomeNeededTypical": 113957,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 18,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 20,
+        "totalStates": 51,
+        "sfrCondoGap": -8
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Maryland",
+      "state": "MD",
+      "slug": "maryland",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.05,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 265716,
+        "typical": 434033,
+        "higher": 710256,
+        "singleFamily": 450374,
+        "condo": 294234,
+        "bedrooms": {
+          "1": 217621,
+          "2": 287616,
+          "3": 396349,
+          "4": 571348,
+          "5plus": 770204
+        }
+      },
+      "payments": {
+        "monthly20Down": 2195,
+        "monthly10Down": 2469,
+        "monthly5Down": 2606,
+        "totalMonthly20Down": 2701,
+        "totalMonthly10Down": 3138,
+        "totalMonthly5Down": 3284
+      },
+      "incomeNeededTypical": 115757,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 23,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 17,
+        "totalStates": 51,
+        "sfrCondoGap": 53
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Massachusetts",
+      "state": "MA",
+      "slug": "massachusetts",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.14,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 435652,
+        "typical": 667265,
+        "higher": 1112312,
+        "singleFamily": 692618,
+        "condo": 550849,
+        "bedrooms": {
+          "1": 433298,
+          "2": 520305,
+          "3": 644137,
+          "4": 881164,
+          "5plus": 1247100
+        }
+      },
+      "payments": {
+        "monthly20Down": 3374,
+        "monthly10Down": 3796,
+        "monthly5Down": 4007,
+        "totalMonthly20Down": 4203,
+        "totalMonthly10Down": 4875,
+        "totalMonthly5Down": 5099
+      },
+      "incomeNeededTypical": 180129,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 88,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 3,
+        "totalStates": 51,
+        "sfrCondoGap": 26
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Michigan",
+      "state": "MI",
+      "slug": "michigan",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.38,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 144630,
+        "typical": 266964,
+        "higher": 455432,
+        "singleFamily": 264570,
+        "condo": 288246,
+        "bedrooms": {
+          "1": 180118,
+          "2": 202585,
+          "3": 274391,
+          "4": 419927,
+          "5plus": 513353
+        }
+      },
+      "payments": {
+        "monthly20Down": 1350,
+        "monthly10Down": 1519,
+        "monthly5Down": 1603,
+        "totalMonthly20Down": 1735,
+        "totalMonthly10Down": 2004,
+        "totalMonthly5Down": 2094
+      },
+      "incomeNeededTypical": 74357,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -25,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 40,
+        "totalStates": 51,
+        "sfrCondoGap": -8
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Minnesota",
+      "state": "MN",
+      "slug": "minnesota",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.05,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 223763,
+        "typical": 354135,
+        "higher": 548425,
+        "singleFamily": 361319,
+        "condo": 219492,
+        "bedrooms": {
+          "1": 190105,
+          "2": 275565,
+          "3": 352292,
+          "4": 445017,
+          "5plus": 568691
+        }
+      },
+      "payments": {
+        "monthly20Down": 1791,
+        "monthly10Down": 2015,
+        "monthly5Down": 2126,
+        "totalMonthly20Down": 2204,
+        "totalMonthly10Down": 2560,
+        "totalMonthly5Down": 2680
+      },
+      "incomeNeededTypical": 94457,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 0,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 26,
+        "totalStates": 51,
+        "sfrCondoGap": 65
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Mississippi",
+      "state": "MS",
+      "slug": "mississippi",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.79,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 99536,
+        "typical": 197008,
+        "higher": 339349,
+        "singleFamily": 196286,
+        "condo": 259921,
+        "bedrooms": {
+          "1": 113126,
+          "2": 131403,
+          "3": 210712,
+          "4": 333087,
+          "5plus": 438233
+        }
+      },
+      "payments": {
+        "monthly20Down": 996,
+        "monthly10Down": 1121,
+        "monthly5Down": 1183,
+        "totalMonthly20Down": 1183,
+        "totalMonthly10Down": 1382,
+        "totalMonthly5Down": 1448
+      },
+      "incomeNeededTypical": 50700,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -44,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 50,
+        "totalStates": 51,
+        "sfrCondoGap": -24
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Missouri",
+      "state": "MO",
+      "slug": "missouri",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.97,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 152265,
+        "typical": 268423,
+        "higher": 451440,
+        "singleFamily": 271449,
+        "condo": 216095,
+        "bedrooms": {
+          "1": 131798,
+          "2": 175217,
+          "3": 271712,
+          "4": 414560,
+          "5plus": 526959
+        }
+      },
+      "payments": {
+        "monthly20Down": 1357,
+        "monthly10Down": 1527,
+        "monthly5Down": 1612,
+        "totalMonthly20Down": 1653,
+        "totalMonthly10Down": 1923,
+        "totalMonthly5Down": 2013
+      },
+      "incomeNeededTypical": 70843,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -24,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 39,
+        "totalStates": 51,
+        "sfrCondoGap": 26
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Montana",
+      "state": "MT",
+      "slug": "montana",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.74,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 283241,
+        "typical": 472852,
+        "higher": 808460,
+        "singleFamily": 475958,
+        "condo": 424293,
+        "bedrooms": {
+          "1": 307805,
+          "2": 363702,
+          "3": 497938,
+          "4": 567164,
+          "5plus": 667662
+        }
+      },
+      "payments": {
+        "monthly20Down": 2391,
+        "monthly10Down": 2690,
+        "monthly5Down": 2839,
+        "totalMonthly20Down": 2821,
+        "totalMonthly10Down": 3297,
+        "totalMonthly5Down": 3456
+      },
+      "incomeNeededTypical": 120900,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 34,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 14,
+        "totalStates": 51,
+        "sfrCondoGap": 12
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Nebraska",
+      "state": "NE",
+      "slug": "nebraska",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.63,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 170086,
+        "typical": 282169,
+        "higher": 466189,
+        "singleFamily": 283051,
+        "condo": 229896,
+        "bedrooms": {
+          "1": 144333,
+          "2": 198628,
+          "3": 282180,
+          "4": 389293,
+          "5plus": 482237
+        }
+      },
+      "payments": {
+        "monthly20Down": 1427,
+        "monthly10Down": 1605,
+        "monthly5Down": 1694,
+        "totalMonthly20Down": 1892,
+        "totalMonthly10Down": 2177,
+        "totalMonthly5Down": 2272
+      },
+      "incomeNeededTypical": 81086,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -20,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 38,
+        "totalStates": 51,
+        "sfrCondoGap": 23
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Nevada",
+      "state": "NV",
+      "slug": "nevada",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.55,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 322105,
+        "typical": 447276,
+        "higher": 680214,
+        "singleFamily": 465157,
+        "condo": 241541,
+        "bedrooms": {
+          "1": 202478,
+          "2": 310249,
+          "3": 427845,
+          "4": 531331,
+          "5plus": 685262
+        }
+      },
+      "payments": {
+        "monthly20Down": 2262,
+        "monthly10Down": 2544,
+        "monthly5Down": 2686,
+        "totalMonthly20Down": 2597,
+        "totalMonthly10Down": 3048,
+        "totalMonthly5Down": 3198
+      },
+      "incomeNeededTypical": 111300,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 26,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 16,
+        "totalStates": 51,
+        "sfrCondoGap": 93
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "New Hampshire",
+      "state": "NH",
+      "slug": "new-hampshire",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.93,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 350941,
+        "typical": 516578,
+        "higher": 769918,
+        "singleFamily": 536932,
+        "condo": 408485,
+        "bedrooms": {
+          "1": 269693,
+          "2": 404655,
+          "3": 541721,
+          "4": 702057,
+          "5plus": 794742
+        }
+      },
+      "payments": {
+        "monthly20Down": 2612,
+        "monthly10Down": 2939,
+        "monthly5Down": 3102,
+        "totalMonthly20Down": 3594,
+        "totalMonthly10Down": 4114,
+        "totalMonthly5Down": 4288
+      },
+      "incomeNeededTypical": 154029,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 46,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 10,
+        "totalStates": 51,
+        "sfrCondoGap": 31
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "New Jersey",
+      "state": "NJ",
+      "slug": "new-jersey",
+      "latestDate": "2026-05",
+      "taxRatePct": 2.23,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 364216,
+        "typical": 578855,
+        "higher": 961516,
+        "singleFamily": 598790,
+        "condo": 438626,
+        "bedrooms": {
+          "1": 314260,
+          "2": 414076,
+          "3": 560852,
+          "4": 767935,
+          "5plus": 1195621
+        }
+      },
+      "payments": {
+        "monthly20Down": 2927,
+        "monthly10Down": 3293,
+        "monthly5Down": 3476,
+        "totalMonthly20Down": 4172,
+        "totalMonthly10Down": 4754,
+        "totalMonthly5Down": 4949
+      },
+      "incomeNeededTypical": 178800,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 63,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 6,
+        "totalStates": 51,
+        "sfrCondoGap": 37
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "New Mexico",
+      "state": "NM",
+      "slug": "new-mexico",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.73,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 200957,
+        "typical": 319816,
+        "higher": 508876,
+        "singleFamily": 321378,
+        "condo": 273137,
+        "bedrooms": {
+          "1": 208367,
+          "2": 262686,
+          "3": 337391,
+          "4": 431188,
+          "5plus": 560451
+        }
+      },
+      "payments": {
+        "monthly20Down": 1617,
+        "monthly10Down": 1819,
+        "monthly5Down": 1920,
+        "totalMonthly20Down": 1905,
+        "totalMonthly10Down": 2227,
+        "totalMonthly5Down": 2335
+      },
+      "incomeNeededTypical": 81643,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -10,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 32,
+        "totalStates": 51,
+        "sfrCondoGap": 18
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "New York",
+      "state": "NY",
+      "slug": "new-york",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.4,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 243400,
+        "typical": 517805,
+        "higher": 1001082,
+        "singleFamily": 497104,
+        "condo": 632326,
+        "bedrooms": {
+          "1": 424237,
+          "2": 355720,
+          "3": 369929,
+          "4": 572056,
+          "5plus": 879595
+        }
+      },
+      "payments": {
+        "monthly20Down": 2618,
+        "monthly10Down": 2946,
+        "monthly5Down": 3109,
+        "totalMonthly20Down": 3373,
+        "totalMonthly10Down": 3895,
+        "totalMonthly5Down": 4069
+      },
+      "incomeNeededTypical": 144557,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 46,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 9,
+        "totalStates": 51,
+        "sfrCondoGap": -21
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "North Carolina",
+      "state": "NC",
+      "slug": "north-carolina",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.8,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 197657,
+        "typical": 339236,
+        "higher": 587389,
+        "singleFamily": 341382,
+        "condo": 284701,
+        "bedrooms": {
+          "1": 221779,
+          "2": 231795,
+          "3": 324100,
+          "4": 491643,
+          "5plus": 685867
+        }
+      },
+      "payments": {
+        "monthly20Down": 1715,
+        "monthly10Down": 1930,
+        "monthly5Down": 2037,
+        "totalMonthly20Down": 2040,
+        "totalMonthly10Down": 2382,
+        "totalMonthly5Down": 2496
+      },
+      "incomeNeededTypical": 87429,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -4,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 28,
+        "totalStates": 51,
+        "sfrCondoGap": 20
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "North Dakota",
+      "state": "ND",
+      "slug": "north-dakota",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.98,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 166250,
+        "typical": 290642,
+        "higher": 458908,
+        "singleFamily": 295638,
+        "condo": 204710,
+        "bedrooms": {
+          "1": 137157,
+          "2": 207087,
+          "3": 286887,
+          "4": 358302,
+          "5plus": 445040
+        }
+      },
+      "payments": {
+        "monthly20Down": 1470,
+        "monthly10Down": 1653,
+        "monthly5Down": 1745,
+        "totalMonthly20Down": 1792,
+        "totalMonthly10Down": 2084,
+        "totalMonthly5Down": 2182
+      },
+      "incomeNeededTypical": 76800,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -18,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 36,
+        "totalStates": 51,
+        "sfrCondoGap": 44
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Ohio",
+      "state": "OH",
+      "slug": "ohio",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.53,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 141036,
+        "typical": 248719,
+        "higher": 430607,
+        "singleFamily": 252705,
+        "condo": 215863,
+        "bedrooms": {
+          "1": 133957,
+          "2": 174222,
+          "3": 244497,
+          "4": 385935,
+          "5plus": 480643
+        }
+      },
+      "payments": {
+        "monthly20Down": 1258,
+        "monthly10Down": 1415,
+        "monthly5Down": 1493,
+        "totalMonthly20Down": 1647,
+        "totalMonthly10Down": 1898,
+        "totalMonthly5Down": 1982
+      },
+      "incomeNeededTypical": 70586,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -30,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 43,
+        "totalStates": 51,
+        "sfrCondoGap": 17
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Oklahoma",
+      "state": "OK",
+      "slug": "oklahoma",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.85,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 120874,
+        "typical": 223590,
+        "higher": 378080,
+        "singleFamily": 224926,
+        "condo": 127121,
+        "bedrooms": {
+          "1": 96946,
+          "2": 115539,
+          "3": 220429,
+          "4": 346164,
+          "5plus": 495137
+        }
+      },
+      "payments": {
+        "monthly20Down": 1131,
+        "monthly10Down": 1272,
+        "monthly5Down": 1343,
+        "totalMonthly20Down": 1354,
+        "totalMonthly10Down": 1579,
+        "totalMonthly5Down": 1655
+      },
+      "incomeNeededTypical": 58029,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -37,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 48,
+        "totalStates": 51,
+        "sfrCondoGap": 77
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Oregon",
+      "state": "OR",
+      "slug": "oregon",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.93,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 355418,
+        "typical": 502934,
+        "higher": 749904,
+        "singleFamily": 511359,
+        "condo": 309094,
+        "bedrooms": {
+          "1": 296687,
+          "2": 381074,
+          "3": 491139,
+          "4": 637496,
+          "5plus": 755504
+        }
+      },
+      "payments": {
+        "monthly20Down": 2543,
+        "monthly10Down": 2861,
+        "monthly5Down": 3020,
+        "totalMonthly20Down": 3080,
+        "totalMonthly10Down": 3586,
+        "totalMonthly5Down": 3755
+      },
+      "incomeNeededTypical": 132000,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 42,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 12,
+        "totalStates": 51,
+        "sfrCondoGap": 65
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Pennsylvania",
+      "state": "PA",
+      "slug": "pennsylvania",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.49,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 159111,
+        "typical": 289277,
+        "higher": 510723,
+        "singleFamily": 289731,
+        "condo": 282348,
+        "bedrooms": {
+          "1": 182273,
+          "2": 215034,
+          "3": 285048,
+          "4": 468880,
+          "5plus": 547121
+        }
+      },
+      "payments": {
+        "monthly20Down": 1463,
+        "monthly10Down": 1646,
+        "monthly5Down": 1737,
+        "totalMonthly20Down": 1906,
+        "totalMonthly10Down": 2198,
+        "totalMonthly5Down": 2295
+      },
+      "incomeNeededTypical": 81686,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -18,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 37,
+        "totalStates": 51,
+        "sfrCondoGap": 3
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Rhode Island",
+      "state": "RI",
+      "slug": "rhode-island",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.4,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 383776,
+        "typical": 509691,
+        "higher": 831863,
+        "singleFamily": 521681,
+        "condo": 402106,
+        "bedrooms": {
+          "1": 317763,
+          "2": 419326,
+          "3": 511709,
+          "4": 700794,
+          "5plus": 876198
+        }
+      },
+      "payments": {
+        "monthly20Down": 2577,
+        "monthly10Down": 2899,
+        "monthly5Down": 3061,
+        "totalMonthly20Down": 3321,
+        "totalMonthly10Down": 3834,
+        "totalMonthly5Down": 4006
+      },
+      "incomeNeededTypical": 142329,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 44,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 11,
+        "totalStates": 51,
+        "sfrCondoGap": 30
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "South Carolina",
+      "state": "SC",
+      "slug": "south-carolina",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.56,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 175199,
+        "typical": 308062,
+        "higher": 552673,
+        "singleFamily": 310924,
+        "condo": 266434,
+        "bedrooms": {
+          "1": 194361,
+          "2": 215816,
+          "3": 302204,
+          "4": 431044,
+          "5plus": 564776
+        }
+      },
+      "payments": {
+        "monthly20Down": 1558,
+        "monthly10Down": 1752,
+        "monthly5Down": 1850,
+        "totalMonthly20Down": 1791,
+        "totalMonthly10Down": 2102,
+        "totalMonthly5Down": 2205
+      },
+      "incomeNeededTypical": 76757,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -13,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 33,
+        "totalStates": 51,
+        "sfrCondoGap": 17
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "South Dakota",
+      "state": "SD",
+      "slug": "south-dakota",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.17,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 188389,
+        "typical": 323067,
+        "higher": 541034,
+        "singleFamily": 324428,
+        "condo": 238155,
+        "bedrooms": {
+          "1": 161583,
+          "2": 241903,
+          "3": 311749,
+          "4": 378454,
+          "5plus": 518489
+        }
+      },
+      "payments": {
+        "monthly20Down": 1634,
+        "monthly10Down": 1838,
+        "monthly5Down": 1940,
+        "totalMonthly20Down": 2043,
+        "totalMonthly10Down": 2368,
+        "totalMonthly5Down": 2477
+      },
+      "incomeNeededTypical": 87557,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -9,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 31,
+        "totalStates": 51,
+        "sfrCondoGap": 36
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Tennessee",
+      "state": "TN",
+      "slug": "tennessee",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.66,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 193019,
+        "typical": 336445,
+        "higher": 574947,
+        "singleFamily": 337252,
+        "condo": 319071,
+        "bedrooms": {
+          "1": 238843,
+          "2": 244090,
+          "3": 335843,
+          "4": 492411,
+          "5plus": 674422
+        }
+      },
+      "payments": {
+        "monthly20Down": 1701,
+        "monthly10Down": 1914,
+        "monthly5Down": 2020,
+        "totalMonthly20Down": 1984,
+        "totalMonthly10Down": 2323,
+        "totalMonthly5Down": 2437
+      },
+      "incomeNeededTypical": 85029,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -5,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 29,
+        "totalStates": 51,
+        "sfrCondoGap": 6
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Texas",
+      "state": "TX",
+      "slug": "texas",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.68,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 186551,
+        "typical": 302550,
+        "higher": 534006,
+        "singleFamily": 304167,
+        "condo": 230759,
+        "bedrooms": {
+          "1": 148810,
+          "2": 184661,
+          "3": 274648,
+          "4": 401314,
+          "5plus": 617494
+        }
+      },
+      "payments": {
+        "monthly20Down": 1530,
+        "monthly10Down": 1721,
+        "monthly5Down": 1817,
+        "totalMonthly20Down": 2042,
+        "totalMonthly10Down": 2346,
+        "totalMonthly5Down": 2448
+      },
+      "incomeNeededTypical": 87514,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -15,
+        "affordabilityTier": "a relatively affordable housing market",
+        "rank": 34,
+        "totalStates": 51,
+        "sfrCondoGap": 32
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Utah",
+      "state": "UT",
+      "slug": "utah",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.57,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 393070,
+        "typical": 541277,
+        "higher": 835452,
+        "singleFamily": 552541,
+        "condo": 409377,
+        "bedrooms": {
+          "1": 351227,
+          "2": 400123,
+          "3": 490232,
+          "4": 583720,
+          "5plus": 732782
+        }
+      },
+      "payments": {
+        "monthly20Down": 2737,
+        "monthly10Down": 3079,
+        "monthly5Down": 3250,
+        "totalMonthly20Down": 3152,
+        "totalMonthly10Down": 3697,
+        "totalMonthly5Down": 3879
+      },
+      "incomeNeededTypical": 135086,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 53,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 8,
+        "totalStates": 51,
+        "sfrCondoGap": 35
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Vermont",
+      "state": "VT",
+      "slug": "vermont",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.83,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 260385,
+        "typical": 400274,
+        "higher": 639589,
+        "singleFamily": 403377,
+        "condo": 372591,
+        "bedrooms": {
+          "1": 250070,
+          "2": 335407,
+          "3": 438318,
+          "4": 546004,
+          "5plus": 615014
+        }
+      },
+      "payments": {
+        "monthly20Down": 2024,
+        "monthly10Down": 2277,
+        "monthly5Down": 2404,
+        "totalMonthly20Down": 2751,
+        "totalMonthly10Down": 3154,
+        "totalMonthly5Down": 3289
+      },
+      "incomeNeededTypical": 117900,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 13,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 22,
+        "totalStates": 51,
+        "sfrCondoGap": 8
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Virginia",
+      "state": "VA",
+      "slug": "virginia",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.82,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 243078,
+        "typical": 417463,
+        "higher": 754102,
+        "singleFamily": 425317,
+        "condo": 356321,
+        "bedrooms": {
+          "1": 277282,
+          "2": 280593,
+          "3": 374344,
+          "4": 581220,
+          "5plus": 854538
+        }
+      },
+      "payments": {
+        "monthly20Down": 2111,
+        "monthly10Down": 2375,
+        "monthly5Down": 2507,
+        "totalMonthly20Down": 2518,
+        "totalMonthly10Down": 2938,
+        "totalMonthly5Down": 3079
+      },
+      "incomeNeededTypical": 107914,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 18,
+        "affordabilityTier": "an above-average housing market",
+        "rank": 19,
+        "totalStates": 51,
+        "sfrCondoGap": 19
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Washington",
+      "state": "WA",
+      "slug": "washington",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.87,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 396672,
+        "typical": 603870,
+        "higher": 1016498,
+        "singleFamily": 619198,
+        "condo": 434994,
+        "bedrooms": {
+          "1": 371071,
+          "2": 464308,
+          "3": 587900,
+          "4": 766530,
+          "5plus": 932628
+        }
+      },
+      "payments": {
+        "monthly20Down": 3053,
+        "monthly10Down": 3435,
+        "monthly5Down": 3626,
+        "totalMonthly20Down": 3667,
+        "totalMonthly10Down": 4276,
+        "totalMonthly5Down": 4479
+      },
+      "incomeNeededTypical": 157157,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 71,
+        "affordabilityTier": "one of the higher-priced housing markets",
+        "rank": 4,
+        "totalStates": 51,
+        "sfrCondoGap": 42
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "West Virginia",
+      "state": "WV",
+      "slug": "west-virginia",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.57,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 89313,
+        "typical": 178719,
+        "higher": 325824,
+        "singleFamily": 178615,
+        "condo": 188256,
+        "bedrooms": {
+          "1": 104825,
+          "2": 119031,
+          "3": 199057,
+          "4": 290088,
+          "5plus": 374956
+        }
+      },
+      "payments": {
+        "monthly20Down": 904,
+        "monthly10Down": 1017,
+        "monthly5Down": 1073,
+        "totalMonthly20Down": 1041,
+        "totalMonthly10Down": 1221,
+        "totalMonthly5Down": 1281
+      },
+      "incomeNeededTypical": 44614,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -50,
+        "affordabilityTier": "one of the more affordable housing markets",
+        "rank": 51,
+        "totalStates": 51,
+        "sfrCondoGap": -5
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Wisconsin",
+      "state": "WI",
+      "slug": "wisconsin",
+      "latestDate": "2026-05",
+      "taxRatePct": 1.61,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 216297,
+        "typical": 339653,
+        "higher": 533287,
+        "singleFamily": 344068,
+        "condo": 292188,
+        "bedrooms": {
+          "1": 192167,
+          "2": 254261,
+          "3": 343117,
+          "4": 435877,
+          "5plus": 524916
+        }
+      },
+      "payments": {
+        "monthly20Down": 1717,
+        "monthly10Down": 1932,
+        "monthly5Down": 2039,
+        "totalMonthly20Down": 2272,
+        "totalMonthly10Down": 2614,
+        "totalMonthly5Down": 2729
+      },
+      "incomeNeededTypical": 97371,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": -4,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 27,
+        "totalStates": 51,
+        "sfrCondoGap": 18
+      }
+    },
+    {
+      "regionType": "state",
+      "regionName": "Wyoming",
+      "state": "WY",
+      "slug": "wyoming",
+      "latestDate": "2026-05",
+      "taxRatePct": 0.58,
+      "taxIsStateSpecific": true,
+      "homeValues": {
+        "starter": 235277,
+        "typical": 367664,
+        "higher": 663033,
+        "singleFamily": 366283,
+        "condo": 530925,
+        "bedrooms": {
+          "1": 238774,
+          "2": 276690,
+          "3": 366189,
+          "4": 426140,
+          "5plus": 545301
+        }
+      },
+      "payments": {
+        "monthly20Down": 1859,
+        "monthly10Down": 2091,
+        "monthly5Down": 2208,
+        "totalMonthly20Down": 2144,
+        "totalMonthly10Down": 2514,
+        "totalMonthly5Down": 2638
+      },
+      "incomeNeededTypical": 91886,
+      "rent": null,
+      "context": {
+        "nationalTypical": 354135,
+        "vsNationalPct": 4,
+        "affordabilityTier": "a mid-range housing market",
+        "rank": 25,
+        "totalStates": 51,
+        "sfrCondoGap": -31
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rent vs Buy Calculator | Home Payment Atlas</title>
+<meta name="description" content="Free rent vs buy calculator. Compare the net cost of buying a home (after equity) against renting (after investing your down payment), and find your break-even year.">
+<link rel="canonical" href="https://homepaymentatlas.com/rent-vs-buy-calculator/">
+<meta property="og:title" content="Rent vs Buy Calculator | Home Payment Atlas">
+<meta property="og:description" content="Free rent vs buy calculator. Compare the net cost of buying a home (after equity) against renting (after investing your down payment), and find your break-even year.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://homepaymentatlas.com/rent-vs-buy-calculator/">
+<meta property="og:site_name" content="Home Payment Atlas">
+<meta property="og:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="theme-color" content="#faf7f2">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<link rel="manifest" href="../site.webmanifest">
+<script>window.atlasDataLayer=window.atlasDataLayer||[];window.trackAtlasEvent=window.trackAtlasEvent||function(n,p){try{window.atlasDataLayer.push({event:n,payload:p||{},ts:Date.now()});if(window.gtag){window.gtag('event',n,p||{});}if(window.plausible){window.plausible(n,{props:p||{}});}}catch(e){}};</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3840656918521680" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rent vs Buy Calculator","url":"https://homepaymentatlas.com/rent-vs-buy-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compare the multi-year net cost of buying versus renting, with a break-even estimate."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this rent vs buy calculator work?","acceptedAnswer":{"@type":"Answer","text":"It models each year you own: your mortgage, taxes, insurance, and maintenance, minus the equity you'd keep if you sold (after selling costs and appreciation). It compares that to renting over the same period, crediting the renter with the investment growth on the cash a buyer would tie up upfront. The break-even year is when buying's net cost first drops below renting's."}},{"@type":"Question","name":"What is the break-even point?","acceptedAnswer":{"@type":"Answer","text":"The number of years you'd need to stay for buying to become cheaper than renting on your assumptions. Because buying has large upfront and selling costs, short stays usually favor renting; longer stays usually favor buying."}},{"@type":"Question","name":"Is this a complete rent-vs-buy decision?","acceptedAnswer":{"@type":"Answer","text":"No. It's an estimate to frame the trade-off. It can't capture everything — job flexibility, the risk and effort of ownership, tax situations, or how markets actually move. Treat it as a starting point, not an answer."}},{"@type":"Question","name":"Why does the down payment matter so much?","acceptedAnswer":{"@type":"Answer","text":"The cash you put down (and closing costs) is money a renter could invest instead. This calculator credits the renter with that investment growth, which is why a higher assumed investment return makes renting look better."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://homepaymentatlas.com/"},{"@type":"ListItem","position":2,"name":"Rent vs Buy Calculator","item":"https://homepaymentatlas.com/rent-vs-buy-calculator/"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2b2622" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../mortgage-calculator/index.html">Calculator</a>
+      <a href="../states/index.html">States</a>
+      <a href="../methodology/index.html">Methodology</a>
+      <a href="../privacy/index.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page" style="color:var(--ink-700)">Rent vs Buy Calculator</span></nav>
+<section class="section-tight"><div class="wrap">
+  <h1>Rent vs Buy Calculator</h1>
+  <p class="lead" style="max-width:64ch;color:var(--ink-700)">Buying isn't automatically better than renting. Compare the multi-year net cost of each — after equity on one side and investment growth on the other — and see your break-even year. Results update as you type.</p>
+</div></section>
+
+<section class="section-tight"><div class="wrap">
+<div class="calc" data-rentbuy>
+  <div class="calc-inputs card">
+    <div class="field-row">
+      <div class="field"><label for="rb-price">Home price</label><div class="input-wrap has-pre "><span class="affix pre">$</span><input type="number" id="rb-price" inputmode="decimal" value="400000" min="0" step="1000"></div></div>
+      <div class="field"><label for="rb-rent">Monthly rent</label><div class="input-wrap has-pre "><span class="affix pre">$</span><input type="number" id="rb-rent" inputmode="decimal" value="2000" min="0" step="50"></div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="rb-down">Down payment</label><div class="input-wrap  has-suf"><input type="number" id="rb-down" inputmode="decimal" value="20" min="0" max="100" step="0.5"><span class="affix suf">%</span></div></div>
+      <div class="field"><label for="rb-rate">Mortgage rate</label><div class="input-wrap  has-suf"><input type="number" id="rb-rate" inputmode="decimal" value="6.5" min="0" max="25" step="0.05"><span class="affix suf">%</span></div></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="rb-term">Loan term</label><select id="rb-term"><option value="30">30 years</option><option value="15">15 years</option></select></div>
+      <div class="field"><label for="rb-years">Years you'll stay</label><div class="input-wrap  has-suf"><input type="number" id="rb-years" inputmode="decimal" value="7" min="1" max="30" step="1"><span class="affix suf">yrs</span></div></div>
+    </div>
+    <details class="advanced">
+      <summary>Assumptions (editable)</summary>
+      <div class="field-row" style="margin-top:14px">
+        <div class="field"><label for="rb-appr">Home appreciation / yr</label><div class="input-wrap  has-suf"><input type="number" id="rb-appr" inputmode="decimal" value="3" min="-5" max="15" step="0.1"><span class="affix suf">%</span></div></div>
+        <div class="field"><label for="rb-rentinc">Rent increase / yr</label><div class="input-wrap  has-suf"><input type="number" id="rb-rentinc" inputmode="decimal" value="3" min="0" max="15" step="0.1"><span class="affix suf">%</span></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="rb-return">Investment return / yr</label><div class="input-wrap  has-suf"><input type="number" id="rb-return" inputmode="decimal" value="5" min="0" max="15" step="0.1"><span class="affix suf">%</span></div></div>
+        <div class="field"><label for="rb-sell">Selling costs</label><div class="input-wrap  has-suf"><input type="number" id="rb-sell" inputmode="decimal" value="6" min="0" max="12" step="0.5"><span class="affix suf">%</span></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="rb-tax">Property tax / yr</label><div class="input-wrap  has-suf"><input type="number" id="rb-tax" inputmode="decimal" value="1.1" min="0" max="5" step="0.05"><span class="affix suf">%</span></div></div>
+        <div class="field"><label for="rb-ins">Insurance / yr</label><div class="input-wrap  has-suf"><input type="number" id="rb-ins" inputmode="decimal" value="0.35" min="0" max="3" step="0.05"><span class="affix suf">%</span></div></div>
+      </div>
+      <div class="field"><label for="rb-maint">Maintenance / yr</label><div class="input-wrap  has-suf"><input type="number" id="rb-maint" inputmode="decimal" value="1" min="0" max="5" step="0.1"><span class="affix suf">%</span></div></div>
+      <p class="hint">Investment return is the opportunity cost: what a renter could earn investing the cash a buyer ties up upfront.</p>
+    </details>
+  </div>
+
+  <aside class="calc-result" aria-label="Rent vs buy result">
+    <div class="result-card">
+      <div class="result-label">Over <span id="rb-years-label">7 years</span></div>
+      <div class="result-headline" id="rb-verdict" aria-live="polite" style="font-size:clamp(1.8rem,4.5vw,2.4rem)">—</div>
+      <p class="estimate-note" id="rb-sub">Adjust the inputs to compare.</p>
+      <div class="mini-stats" style="margin-top:18px">
+        <div class="stat"><div class="k">Net cost of buying</div><div class="v" id="rb-buy">$0</div></div>
+        <div class="stat"><div class="k">Net cost of renting</div><div class="v" id="rb-rent-cost">$0</div></div>
+      </div>
+      <div class="comfort" style="margin-top:16px">
+        <div class="ctop"><span class="icon-label">Break-even: <strong class="label" id="rb-breakeven">—</strong></span></div>
+        <div class="dti" id="rb-note"></div>
+      </div>
+    </div>
+  </aside>
+</div></div></section>
+
+<section class="section-tight"><div class="wrap"><div class="disclaimer"><strong>Estimates only.</strong> This tool is for education and planning. It is not financial advice, a loan offer, or a guarantee of interest rates, loan approval, property taxes, insurance costs, PMI, or home values. Your actual costs will depend on your lender, location, and circumstances. Home-value examples use Zillow Research (ZHVI) data and may not match current listings or appraisals.</div></div></section>
+
+<!-- ad slot: in-content, after first result --><div class="ad-slot ad-horizontal" role="complementary" aria-label="Advertisement"><span>Advertisement</span><span style="opacity:.7;text-transform:none;letter-spacing:0;font-size:.72rem">This space helps keep the calculators free.</span></div>
+
+<section class="section"><div class="wrap"><div class="prose">
+  <h2>How to read this</h2>
+  <p><strong>Net cost of buying</strong> is everything you pay to own over the period — upfront cash, mortgage, taxes, insurance, maintenance — minus the equity you'd walk away with if you sold (after appreciation and selling costs). <strong>Net cost of renting</strong> is the rent you'd pay over the same years, minus the investment growth on the cash a buyer ties up. Lower wins.</p>
+  <h2>What buying actually costs</h2>
+  <p>Owning is more than the mortgage payment: principal &amp; interest, property tax, homeowners insurance, PMI (under 20% down), and maintenance (often ~1% of value per year), plus the down payment and roughly 3% in closing costs. Some of each payment builds equity, and fixed-rate principal &amp; interest doesn't rise with inflation.</p>
+  <h2>Why time horizon decides it</h2>
+  <p>Because buying carries large upfront and selling costs, it usually takes several years for ownership to come out ahead — frequently 5+ years, though your break-even above depends on your inputs. Short stays favor renting; longer stays favor buying. Several of our <a href="../states/index.html">city pages</a> also show a typical local rent next to the estimated cost of buying.</p>
+  <div class="disclaimer"><strong>Estimates only.</strong> This tool is for education and planning. It is not financial advice, a loan offer, or a guarantee of interest rates, loan approval, property taxes, insurance costs, PMI, or home values. Your actual costs will depend on your lender, location, and circumstances. Home-value examples use Zillow Research (ZHVI) data and may not match current listings or appraisals.</div>
+</div></div></section>
+
+<section class="section faq"><div class="wrap"><h2>Frequently asked questions</h2><details><summary>How does this rent vs buy calculator work?</summary><p>It models each year you own: your mortgage, taxes, insurance, and maintenance, minus the equity you'd keep if you sold (after selling costs and appreciation). It compares that to renting over the same period, crediting the renter with the investment growth on the cash a buyer would tie up upfront. The break-even year is when buying's net cost first drops below renting's.</p></details><details><summary>What is the break-even point?</summary><p>The number of years you'd need to stay for buying to become cheaper than renting on your assumptions. Because buying has large upfront and selling costs, short stays usually favor renting; longer stays usually favor buying.</p></details><details><summary>Is this a complete rent-vs-buy decision?</summary><p>No. It's an estimate to frame the trade-off. It can't capture everything — job flexibility, the risk and effort of ownership, tax situations, or how markets actually move. Treat it as a starting point, not an answer.</p></details><details><summary>Why does the down payment matter so much?</summary><p>The cash you put down (and closing costs) is money a renter could invest instead. This calculator credits the renter with that investment growth, which is why a higher assumed investment return makes renting look better.</p></details></div></section>
+
+<!-- ad slot: in-content, near FAQ --><div class="ad-slot ad-lower" role="complementary" aria-label="Advertisement"><span>Advertisement</span><span style="opacity:.7;text-transform:none;letter-spacing:0;font-size:.72rem">This space helps keep the calculators free.</span></div>
+
+<section class="section-tight"><div class="wrap">
+  <h2>Related calculators</h2>
+  <div class="related-links">
+    <a href="../mortgage-calculator/index.html">Mortgage calculator</a>
+    <a href="../states/index.html">State &amp; city calculators</a>
+    <a href="../pmi-calculator/index.html">PMI calculator</a>
+    <a href="../methodology/index.html">Methodology</a>
+  </div>
+</div></section>
+
+<script src="../assets/atlas-anim.js" defer></script>
+<script src="../assets/rentbuy.js" defer></script><footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="../index.html" style="margin-bottom:12px"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+        <p style="max-width:36ch">Know the monthly cost before you tour the house. Clear, calm home-payment planning built on Zillow Research home-value data.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../mortgage-calculator/index.html">Mortgage Calculator</a>
+        <a href="../rent-vs-buy-calculator/index.html">Rent vs Buy Calculator</a>
+        <a href="../pmi-calculator/index.html">PMI Calculator</a>
+        <a href="../closing-cost-calculator/index.html">Closing Cost Calculator</a>
+        <a href="../refinance-calculator/index.html">Refinance Calculator</a>
+      </div>
+      <div>
+        <h4>States</h4>
+        <a href="../states/index.html">All States</a>
+        <a href="../states/maryland/index.html">Maryland</a>
+        <a href="../states/texas/index.html">Texas</a>
+        <a href="../states/california/index.html">California</a>
+        <a href="../states/florida/index.html">Florida</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="../methodology/index.html">Methodology</a>
+        <a href="../about/index.html">About</a>
+        <a href="../privacy/index.html">Privacy &amp; Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0">Estimates only — not financial advice, a loan offer, or a guarantee of rates, approval, taxes, insurance, or home values. Home-value examples use Zillow Research (ZHVI) data and may not reflect current listings or appraisals. © 2026 Home Payment Atlas.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

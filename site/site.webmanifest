@@ -1,0 +1,16 @@
+{
+  "name": "Home Payment Atlas",
+  "short_name": "Atlas",
+  "description": "Know the monthly cost before you tour the house.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#faf7f2",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

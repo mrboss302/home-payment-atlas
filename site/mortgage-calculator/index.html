@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortgage Calculator with PMI & Taxes | Home Payment Atlas</title>
+<meta name="description" content="Free mortgage calculator: estimate your full monthly payment — principal, interest, tax, insurance, PMI and HOA — plus total interest, cash needed and affordability.">
+<link rel="canonical" href="https://homepaymentatlas.com/mortgage-calculator/">
+<meta property="og:title" content="Mortgage Calculator with PMI & Taxes | Home Payment Atlas">
+<meta property="og:description" content="Free mortgage calculator: estimate your full monthly payment — principal, interest, tax, insurance, PMI and HOA — plus total interest, cash needed and affordability.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://homepaymentatlas.com/mortgage-calculator/">
+<meta property="og:site_name" content="Home Payment Atlas">
+<meta property="og:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="theme-color" content="#faf7f2">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<link rel="manifest" href="../site.webmanifest">
+<script>window.atlasDataLayer=window.atlasDataLayer||[];window.trackAtlasEvent=window.trackAtlasEvent||function(n,p){try{window.atlasDataLayer.push({event:n,payload:p||{},ts:Date.now()});if(window.gtag){window.gtag('event',n,p||{});}if(window.plausible){window.plausible(n,{props:p||{}});}}catch(e){}};</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3840656918521680" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Calculator","url":"https://homepaymentatlas.com/mortgage-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate full monthly mortgage payments including taxes, insurance, PMI and HOA."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this mortgage calculator include?","acceptedAnswer":{"@type":"Answer","text":"It estimates principal and interest using a standard fixed-rate amortization formula, then adds property tax, homeowners insurance, PMI (when your down payment is under 20%), and any HOA dues you enter. The large number is your estimated total monthly housing payment."}},{"@type":"Question","name":"How is PMI estimated?","acceptedAnswer":{"@type":"Answer","text":"When your down payment is below 20%, we apply a default private mortgage insurance rate of 0.5% of the loan per year. You can change this in the advanced settings. Reaching 20% equity typically removes PMI."}},{"@type":"Question","name":"How do you calculate affordability?","acceptedAnswer":{"@type":"Answer","text":"If you enter your annual income, we compare your total housing payment to your gross monthly income. Roughly 28% or less is labeled Comfortable, up to 36% Manageable, up to 43% Tight, and above that Stretching. These are general guidelines, not lending decisions."}},{"@type":"Question","name":"Can I share my scenario?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every input is stored in the page URL, so the Copy / share scenario button gives you a link that reopens the calculator exactly as you set it."}},{"@type":"Question","name":"Are these numbers a loan offer?","acceptedAnswer":{"@type":"Answer","text":"No. All results are estimates for planning and education only. They are not financial advice, a quote, or a guarantee of rates, approval, taxes, insurance or home values."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://homepaymentatlas.com/"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator","item":"https://homepaymentatlas.com/mortgage-calculator/"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2b2622" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../mortgage-calculator/index.html">Calculator</a>
+      <a href="../states/index.html">States</a>
+      <a href="../methodology/index.html">Methodology</a>
+      <a href="../privacy/index.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page" style="color:var(--ink-700)">Mortgage Calculator</span></nav>
+<section class="section-tight"><div class="wrap">
+  <h1>Mortgage Calculator</h1>
+  <p class="lead" style="max-width:62ch;color:var(--ink-700)">Estimate the real monthly cost of a home — principal, interest, taxes, insurance, PMI and HOA — and see how different down payments change the picture. Results update as you type.</p>
+</div></section>
+
+<section class="section-tight" id="affordability"><div class="wrap">
+  
+<div class="calc" data-calculator>
+  <div class="calc-inputs card">
+    <div class="chip-group"><span class="label">Home price examples</span><div class="scenario-chips"><button type="button" class="chip" data-scenario="price" data-value="250000">Starter · $250,000</button><button type="button" class="chip active" data-scenario="price" data-value="400000">Typical · $400,000</button><button type="button" class="chip" data-scenario="price" data-value="650000">Higher · $650,000</button></div></div>
+    <div class="chip-group"><span class="label">Down payment</span><div class="scenario-chips">
+      <button type="button" class="chip" data-scenario="down" data-value="5">5% down</button>
+      <button type="button" class="chip" data-scenario="down" data-value="10">10% down</button>
+      <button type="button" class="chip active" data-scenario="down" data-value="20">20% down</button>
+    </div></div>
+
+    <div class="field">
+      <label for="price">Home price</label>
+      <div class="input-wrap has-pre"><span class="affix pre">$</span>
+        <input type="number" id="price" inputmode="numeric" min="0" step="1000" value="400000" aria-describedby="price-hint">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="downPct">Down payment (%)</label>
+        <div class="input-wrap has-suf"><span class="affix suf">%</span>
+          <input type="number" id="downPct" inputmode="decimal" min="0" max="100" step="0.5" value="20">
+        </div>
+      </div>
+      <div class="field">
+        <label for="downAmt">Down payment ($)</label>
+        <div class="input-wrap has-pre"><span class="affix pre">$</span>
+          <input type="number" id="downAmt" inputmode="numeric" min="0" step="1000" value="">
+        </div>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="rate">Interest rate</label>
+        <div class="input-wrap has-suf"><span class="affix suf">%</span>
+          <input type="number" id="rate" inputmode="decimal" min="0" max="25" step="0.05" value="6.5">
+        </div>
+      </div>
+      <div class="field">
+        <label for="term">Loan term</label>
+        <select id="term">
+          <option value="30" selected>30 years</option>
+          <option value="20">20 years</option>
+          <option value="15">15 years</option>
+          <option value="10">10 years</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="tax">Property tax <span class="hint" style="font-weight:400">/ year</span></label>
+        <div class="input-wrap has-pre"><span class="affix pre">$</span>
+          <input type="number" id="tax" inputmode="numeric" min="0" step="100" placeholder="Auto (1.1% of price)">
+        </div>
+        
+      </div>
+      <div class="field">
+        <label for="insurance">Home insurance <span class="hint" style="font-weight:400">/ year</span></label>
+        <div class="input-wrap has-pre"><span class="affix pre">$</span>
+          <input type="number" id="insurance" inputmode="numeric" min="0" step="50" placeholder="Auto (0.35% of price)">
+        </div>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="hoa">HOA <span class="hint" style="font-weight:400">/ month</span></label>
+        <div class="input-wrap has-pre"><span class="affix pre">$</span>
+          <input type="number" id="hoa" inputmode="numeric" min="0" step="10" value="0">
+        </div>
+      </div>
+      <div class="field">
+        <label for="pmiRate">PMI rate <span class="hint" style="font-weight:400">/ year</span></label>
+        <div class="input-wrap has-suf"><span class="affix suf">%</span>
+          <input type="number" id="pmiRate" inputmode="decimal" min="0" max="3" step="0.05" placeholder="0.5">
+        </div>
+      </div>
+    </div>
+
+    <details class="advanced">
+      <summary>Affordability &amp; extra payments (optional)</summary>
+      <div class="field-row" style="margin-top:14px">
+        <div class="field">
+          <label for="income">Annual household income</label>
+          <div class="input-wrap has-pre"><span class="affix pre">$</span>
+            <input type="number" id="income" inputmode="numeric" min="0" step="1000" placeholder="e.g. 120,000">
+          </div>
+        </div>
+        <div class="field">
+          <label for="debts">Other monthly debts</label>
+          <div class="input-wrap has-pre"><span class="affix pre">$</span>
+            <input type="number" id="debts" inputmode="numeric" min="0" step="25" placeholder="Car, cards, loans">
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="extra">Extra monthly payment</label>
+        <div class="input-wrap has-pre"><span class="affix pre">$</span>
+          <input type="number" id="extra" inputmode="numeric" min="0" step="25" value="0">
+        </div>
+        <p class="hint">Extra principal each month shortens the loan and reduces total interest.</p>
+      </div>
+    </details>
+  </div>
+
+  <aside class="calc-result" aria-label="Estimated payment summary">
+    <div class="result-card">
+      <div class="result-label">Estimated monthly payment</div>
+      <div class="result-headline" id="r-total" aria-live="polite">$0</div>
+      <div class="estimate-note">Estimate only — includes principal, interest, taxes, insurance, PMI &amp; HOA when entered.</div>
+
+      <div class="stack-bar" id="stack-bar" aria-hidden="true"></div>
+
+      <div class="breakdown" role="table" aria-label="Payment breakdown">
+        <div class="breakdown-row"><span class="swatch" style="background:var(--teal-700)"></span><span>Principal &amp; interest</span><span class="amt" id="r-pi">$0</span></div>
+        <div class="breakdown-row"><span class="swatch" style="background:var(--clay-500)"></span><span>Property tax</span><span class="amt" id="r-tax">$0</span></div>
+        <div class="breakdown-row"><span class="swatch" style="background:var(--gold-500)"></span><span>Home insurance</span><span class="amt" id="r-ins">$0</span></div>
+        <div class="breakdown-row" id="row-pmi"><span class="swatch" style="background:var(--ink-300)"></span><span>PMI</span><span class="amt" id="r-pmi">$0</span></div>
+        <div class="breakdown-row" id="row-hoa"><span class="swatch" style="background:var(--teal-100)"></span><span>HOA</span><span class="amt" id="r-hoa">$0</span></div>
+      </div>
+
+      <div class="comfort hidden" id="comfort">
+        <div class="ctop"><span class="icon-label">Comfort: <strong class="label" id="comfort-label">—</strong></span></div>
+        <div class="dti" id="comfort-dti"></div>
+        <div class="track"><div class="fill" id="comfort-fill" style="width:0"></div></div>
+      </div>
+
+      <div class="mini-stats">
+        <div class="stat"><div class="k">Loan amount</div><div class="v" id="r-loan">$0</div></div>
+        <div class="stat"><div class="k">Down payment</div><div class="v" id="r-down">$0</div></div>
+        <div class="stat"><div class="k">Est. cash needed</div><div class="v" id="r-cash">$0</div></div>
+        <div class="stat"><div class="k">Total interest</div><div class="v" id="r-total-interest">$0</div></div>
+      </div>
+      <p class="hint" style="margin-top:8px">Est. cash needed includes the down payment plus ~3% closing costs. Loan payoff: <span id="r-payoff">—</span>.</p>
+
+      <div class="insights" id="insights"></div>
+
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="share-btn">Copy / share scenario</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="mobile-summary" aria-hidden="true">
+  <div><div class="ms-label">Est. monthly</div><div class="ms-val" id="ms-val">$0</div></div>
+  <a href="#stack-bar" class="btn btn-primary">See breakdown</a>
+</div>
+
+<script>window.ATLAS_CONFIG={"defaults":{"rate":6.5,"termYears":30,"taxRatePct":1.1,"insuranceRatePct":0.35,"pmiRatePct":0.5,"hoaMonthly":0,"frontEndDti":0.28},"scenarios":{"prices":[{"label":"Starter","value":250000},{"label":"Typical","value":400000},{"label":"Higher","value":650000}]},"region":null};</script>
+<script src="../assets/calculator.js" defer></script>
+<script>document.body.classList.add('has-mobile-summary');</script>
+
+</div></section>
+
+<section class="section-tight"><div class="wrap"><div class="disclaimer"><strong>Estimates only.</strong> This tool is for education and planning. It is not financial advice, a loan offer, or a guarantee of interest rates, loan approval, property taxes, insurance costs, PMI, or home values. Your actual costs will depend on your lender, location, and circumstances. Home-value examples use Zillow Research (ZHVI) data and may not match current listings or appraisals.</div></div></section>
+
+<!-- ad slot: in-content, after first result --><div class="ad-slot ad-horizontal" role="complementary" aria-label="Advertisement"><span>Advertisement</span><span style="opacity:.7;text-transform:none;letter-spacing:0;font-size:.72rem">This space helps keep the calculators free.</span></div>
+
+<section class="section"><div class="wrap prose">
+  <h2>How this calculator works</h2>
+  <p>Monthly principal and interest use the standard fixed-rate mortgage formula <em>M = P · r(1+r)ⁿ / ((1+r)ⁿ − 1)</em>, where P is the loan amount, r is the monthly interest rate, and n is the number of monthly payments. When the rate is 0%, we simply divide the loan by the number of months.</p>
+  <p>Property tax and insurance can be entered as annual dollar amounts, or left blank to use percentage-of-value assumptions (1.1% tax and 0.35% insurance per year). State pages automatically use a state-specific property-tax default. PMI applies only when the down payment is under 20%. Estimated cash needed adds roughly 3% closing costs to your down payment.</p>
+  <p>See the full <a href="../methodology/index.html">methodology</a> for assumptions and limitations.</p>
+</div></section>
+
+<section class="section faq"><div class="wrap"><h2>Frequently asked questions</h2><details><summary>What does this mortgage calculator include?</summary><p>It estimates principal and interest using a standard fixed-rate amortization formula, then adds property tax, homeowners insurance, PMI (when your down payment is under 20%), and any HOA dues you enter. The large number is your estimated total monthly housing payment.</p></details><details><summary>How is PMI estimated?</summary><p>When your down payment is below 20%, we apply a default private mortgage insurance rate of 0.5% of the loan per year. You can change this in the advanced settings. Reaching 20% equity typically removes PMI.</p></details><details><summary>How do you calculate affordability?</summary><p>If you enter your annual income, we compare your total housing payment to your gross monthly income. Roughly 28% or less is labeled Comfortable, up to 36% Manageable, up to 43% Tight, and above that Stretching. These are general guidelines, not lending decisions.</p></details><details><summary>Can I share my scenario?</summary><p>Yes. Every input is stored in the page URL, so the Copy / share scenario button gives you a link that reopens the calculator exactly as you set it.</p></details><details><summary>Are these numbers a loan offer?</summary><p>No. All results are estimates for planning and education only. They are not financial advice, a quote, or a guarantee of rates, approval, taxes, insurance or home values.</p></details></div></section>
+
+<section class="section-tight"><div class="wrap">
+  <h2>Related calculators</h2>
+  <div class="related-links">
+    <a href="../states/index.html">State mortgage calculators</a>
+    <a href="../rent-vs-buy-calculator/index.html">Rent vs buy</a>
+    <a href="../pmi-calculator/index.html">PMI calculator</a>
+    <a href="../closing-cost-calculator/index.html">Closing costs</a>
+    <a href="../refinance-calculator/index.html">Refinance</a>
+    <a href="../examples/index.html">Payment examples</a>
+  </div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="../index.html" style="margin-bottom:12px"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+        <p style="max-width:36ch">Know the monthly cost before you tour the house. Clear, calm home-payment planning built on Zillow Research home-value data.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../mortgage-calculator/index.html">Mortgage Calculator</a>
+        <a href="../rent-vs-buy-calculator/index.html">Rent vs Buy Calculator</a>
+        <a href="../pmi-calculator/index.html">PMI Calculator</a>
+        <a href="../closing-cost-calculator/index.html">Closing Cost Calculator</a>
+        <a href="../refinance-calculator/index.html">Refinance Calculator</a>
+      </div>
+      <div>
+        <h4>States</h4>
+        <a href="../states/index.html">All States</a>
+        <a href="../states/maryland/index.html">Maryland</a>
+        <a href="../states/texas/index.html">Texas</a>
+        <a href="../states/california/index.html">California</a>
+        <a href="../states/florida/index.html">Florida</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="../methodology/index.html">Methodology</a>
+        <a href="../about/index.html">About</a>
+        <a href="../privacy/index.html">Privacy &amp; Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0">Estimates only — not financial advice, a loan offer, or a guarantee of rates, approval, taxes, insurance, or home values. Home-value examples use Zillow Research (ZHVI) data and may not reflect current listings or appraisals. © 2026 Home Payment Atlas.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

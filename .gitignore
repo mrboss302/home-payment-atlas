@@ -1,0 +1,35 @@
+# Home Payment Atlas — repo hygiene
+#
+# Policy: keep the small, REQUIRED launch data tracked; ignore the large OPTIONAL
+# expansion datasets. A full Zillow refresh writes ~600 MB into /csv (City/Metro/
+# ZIP/County ZHVI + ZORI rent files). Committing those every month would bloat git
+# history irreversibly, so we ignore them here. City/metro/rent PAGES are not built
+# yet — when they are, we'll revisit this policy deliberately.
+#
+# NOTE: deleting these files from the working tree (or this ignore rule) only keeps
+# NEW versions out of history. It does NOT remove versions already committed. If big
+# CSVs were ever committed, shrinking the repo requires a one-time history rewrite
+# (git filter-repo or BFG) + force-push. See README "Repository size note".
+
+# --- Tracked on purpose (do NOT ignore) ---
+#   csv/State_*.csv            ← required state launch ZHVI data
+#   csv/zillow-manifest.json   ← machine-readable manifest
+
+# --- Ignored: large optional expansion CSVs ---
+csv/City_*.csv
+csv/Metro_*.csv
+csv/County_*.csv
+csv/Zip_*.csv
+csv/Neighborhood_*.csv
+csv/National_*.csv
+csv/Us_*.csv
+# Any ZORI/rent file regardless of geography prefix
+csv/*_zori_*.csv
+# Optional payment datasets, if they ever ship as large files
+csv/*mortgage_payment*.csv
+csv/*total_monthly_payment*.csv
+
+# --- Standard ignores ---
+node_modules/
+.DS_Store
+*.log
