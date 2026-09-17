@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-17T07:09:19.900Z",
+  "generatedAt": "2026-09-17T11:29:08.210Z",
   "sourcePage": "https://www.zillow.com/research/data/",
   "mode": "state-only",
-  "discoveredLinkCount": 19,
+  "discoveredLinkCount": 10,
   "requiredGroups": {
     "stateLaunch": {
       "label": "State-level launch ZHVI",
@@ -182,7 +182,7 @@
     },
     {
       "filename": "State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
-      "url": "https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv?t=1786950048",
+      "url": "https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
       "localPath": "csv/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv",
       "geography": "state",
       "metric": "ZHVI",
@@ -212,7 +212,7 @@
   "summary": {
     "mode": "state-only",
     "downloaded": 10,
-    "discovered": 19,
+    "discovered": 10,
     "requiredFound": 10,
     "requiredMissing": 0,
     "optionalFound": 0,
