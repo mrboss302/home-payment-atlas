@@ -24,3 +24,5 @@ jobs:
         run: node scripts/validate-site.mjs
       - name: Check comparison math, data and site wiring
         run: node scripts/test-market-compare.mjs
+      - name: Check rent-vs-buy amortization and UI
+        run: node scripts/test-financial-models.mjs
