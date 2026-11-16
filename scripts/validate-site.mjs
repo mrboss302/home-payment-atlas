@@ -62,6 +62,18 @@ function check() {
     const rel = relative(SITE, file);
     const html = readFileSync(file, "utf8");
     const isNoindex = /<meta\s+name="robots"\s+content="noindex/i.test(html);
+    if (html.includes("This space helps keep the calculators free.") ||
+        /class="ad-slot ad-(?:horizontal|sidebar|lower)"(?![^"]*ad-live)/.test(html)) {
+      fail(`${rel}: empty manual advertising placeholder remains in page output`);
+    }
+    if (rel === "compare-markets/index.html") {
+      if (!html.includes("data-market-compare")) fail("Compare States: missing interactive form");
+      if (!html.includes("../assets/market-compare.js")) fail("Compare States: missing working script");
+    }
+    if (rel === "data-updates/index.html" && !html.includes("<h1>Data updates and coverage</h1>")) {
+      fail("Data updates page missing descriptive content");
+    }
+
 
     // Placeholder domains
     for (const d of PLACEHOLDER_DOMAINS) {
@@ -152,7 +164,7 @@ function check() {
       const rel = relative(SITE, file);
       const urlPath = "/" + rel.replace(/index\.html$/, "");
       const norm = urlPath === "/" ? "/" : urlPath;
-      if (!sitemapPaths.has(norm)) warn(`page not listed in sitemap: ${norm}`);
+      if (!sitemapPaths.has(norm)) fail(`indexable page not listed in sitemap: ${norm}`);
     }
   }
 

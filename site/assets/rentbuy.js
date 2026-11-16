@@ -38,14 +38,23 @@
 
     var balance = loan, ownCum = upfront, rentCum = 0, breakeven = null, buyNet = 0, rentNet = 0;
     for (var y = 1; y <= years; y++) {
+      var paidPIThisYear = 0, paidPMIThisYear = 0;
       for (var m = 0; m < 12; m++) {
+        // Do not keep charging principal and interest after a short loan
+        // has been fully repaid (e.g. 15-year term, 30-year stay).
+        if (balance <= 0.000001) { balance = 0; continue; }
+        // Estimate PMI per month until scheduled balance reaches 80% of
+        // the original home value, rather than all-or-none at year-end.
+        if (downPct < 20 && balance > price * 0.8) {
+          paidPMIThisYear += loan * 0.005 / 12;
+        }
         var interest = balance * r;
         var principal = Math.min(balance, Math.max(0, pi - interest));
-        balance -= principal;
+        paidPIThisYear += interest + principal;
+        balance = Math.max(0, balance - principal);
       }
       var hv = price * Math.pow(1 + appr, y);
-      var pmiYr = (downPct < 20 && balance > price * 0.8) ? loan * 0.005 : 0;
-      ownCum += pi * 12 + hv * taxP + hv * insP + hv * maintP + pmiYr;
+      ownCum += paidPIThisYear + hv * taxP + hv * insP + hv * maintP + paidPMIThisYear;
       var equity = hv * (1 - sellP) - balance;
       buyNet = ownCum - equity;
 

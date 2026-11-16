@@ -2,9 +2,13 @@
 
 > Know the monthly cost before you tour the house.
 
-A premium, fast, SEO-friendly mortgage-calculator network built as a **static site**
+A fast, accessible, data-grounded home-payment planning suite built as a **static site**
 generated from Zillow Research home-value data. No backend, no build tooling beyond
 Node — the calculator runs entirely in the browser.
+
+## Current improvement cycle (November 2026)
+
+See [QUALITY-REVIEW.md](QUALITY-REVIEW.md) for the AdSense-quality checklist and remaining owner checks. New original utility includes [Compare Two States](https://homepaymentatlas.com/compare-markets/) and a [source-update and coverage report](https://homepaymentatlas.com/data-updates/), generated state mortgage-rate sensitivity tables, and a rent-versus-buy payoff defect fix. The pages depend on the monthly Zillow source refresh and do not provide live loan quotes. Run `node build/build.mjs && node scripts/validate-site.mjs && node scripts/test-market-compare.mjs && node scripts/test-financial-models.mjs` for the full development regression suite.
 
 ---
 
@@ -41,7 +45,7 @@ host's web root, so `index.html`, `sitemap.xml`, `robots.txt`, `ads.txt`,
   there's one canonical host (or flip `SITE_URL` to www and redirect the other way).
 - **AdSense:** the publisher ID (`ca-pub-3840656918521680`) is set in
   `build/templates.mjs` (`ADS.clientId`), which emits the loader and a root
-  `ads.txt`. Individual ad units stay tasteful placeholders until you create ad
+  `ads.txt`. Unused manual ad slots render nothing until you create ad
   units in the AdSense dashboard and pass their numeric slot IDs, e.g.
   `ADSENSE_SLOT_HORIZONTAL=1234567890 ADSENSE_SLOT_LOWER=… node build/build.mjs`.
 
@@ -105,7 +109,7 @@ Each payload also carries `page` and `state` context automatically.
 
 ## Advertising (AdSense-ready, off by default)
 
-Ad slots render as **tasteful labeled placeholders** until you configure AdSense.
+Unconfigured manual ad slots render **nothing**; the site retains AdSense verification scripts and ads.txt.
 All ad config lives in one place — the `ADS` object in `build/templates.mjs`,
 driven by environment variables:
 
@@ -118,8 +122,7 @@ node build/build.mjs
 ```
 
 With a valid `ca-pub-...` client ID, the build injects the AdSense loader and
-turns each slot into a responsive `<ins class="adsbygoogle">` unit. With no ID,
-placeholders stay. **Ad placement rules are enforced by design:** no ad appears
+turns each slot into a responsive `<ins class="adsbygoogle">` unit. With no valid placement ID, no empty advertising box is shown. **Ad placement rules are enforced by design:** no ad appears
 above the primary calculator, between the inputs and the result card, inside the
 form, or disguised as navigation/CTA buttons.
 
@@ -297,10 +300,9 @@ Two layers enforce this:
 > deliberately. (If you'd rather keep committing the big files, use **Git LFS** for
 > `csv/*.csv` instead.)
 
-### Curated city/metro expansion (staged, not generated yet)
+### Curated city/metro expansion and stale-page handling
 
-City/metro pages are **intentionally not generated yet** — a quality-first rollout
-avoids thin or excessive pages. The staged plan lives in two files:
+The site includes curated city pages generated from a previous City ZHVI download. The current monthly workflow only downloads and refreshes **state-level CSV data**. If City CSV data is not available for the current build, previously generated city pages are clearly labeled **archived** and excluded from search indexing; they remain accessible for existing bookmarks but must not be mistaken for current local values. New city datasets must be independently fetched and validated before refreshed city pages can be published. The curated expansion plan lives in two files:
 
 - **`build/markets.json`** — a curated list of 25 launch markets (city, state, slugs,
   priority, intended URL, optional metro hints).
@@ -345,9 +347,8 @@ The downloader is resilient by design, but if Zillow makes a breaking change:
 ## CSV files used & datasets detected
 
 All 10 CSVs in `csv/` were parsed. Each is Zillow **ZHVI** (Home Value Index),
-state level, smoothed & seasonally adjusted, monthly columns 2000-01 → 2026-05.
-The build extracts the **latest non-empty month per region** (currently **2026-05**)
-for all 50 states + DC.
+state level, smoothed & seasonally adjusted, monthly columns beginning in 2000; the endpoint depends on the committed CSV refresh.
+The build extracts the **latest non-empty month per region** for all 50 states plus DC. The generated `/data-updates/` page reports the observed range and the date of the latest source download.
 
 | Dataset (normalized field)      | Source CSV |
 |---------------------------------|------------|
@@ -360,13 +361,10 @@ for all 50 states + DC.
 
 **Not present in this project (features degrade gracefully):**
 
-- **Rent / ZORI data** → the *Rent vs Buy* feature is shown as a clearly-labeled
-  "coming soon" placeholder instead of breaking.
+- **Rent / ZORI data** → the independent *Rent vs Buy* calculator still works with user-entered rent, but should not be treated as a live local rent estimate.
 - **Zillow payment / mortgage datasets** → monthly payments are **computed** by the
   calculator (standard amortization), not read from a CSV.
-- **City / metro / ZIP files** → only state-level data exists. The URL structure
-  (`/states/{state}/{city}/`) and data model are ready for city pages, but none are
-  generated yet.
+- **City / metro / ZIP files** → the current monthly refresh only includes state-level data; older curated city pages may exist but are marked archived and noindexed when City source CSVs are missing.
 
 ---
 
@@ -380,7 +378,7 @@ for all 50 states + DC.
   "regionName": "Maryland",
   "state": "MD",
   "slug": "maryland",
-  "latestDate": "2026-05",
+  "latestDate": "<source month>",
   "homeValues": {
     "starter": 265716, "typical": 434033, "higher": 710256,
     "singleFamily": 450374, "condo": 294234,
@@ -426,8 +424,7 @@ in `site/assets/calculator.js`.
 - Shareable scenarios: every input is encoded in the URL (Copy/share button).
 - SEO: unique titles/descriptions, single H1, breadcrumbs + `BreadcrumbList`,
   `FAQPage`, and `WebApplication` JSON-LD, clean URLs, `sitemap.xml`, `robots.txt`.
-- Tasteful, clearly-labeled ad placeholders (leaderboard after first result,
-  desktop sidebar, lower-page) — never above the calculator or between inputs and results.
+- No empty advertising containers while ad placements are unconfigured; verified AdSense slots remain separate from calculator inputs and results.
 - Accessibility: labels for every control, keyboard focus styles, semantic HTML,
   contrast-safe palette, info never conveyed by color alone, reduced-motion support.
 
@@ -435,8 +432,8 @@ in `site/assets/calculator.js`.
 
 ## Limitations / missing data
 
-- **No rent data** → rent-vs-buy is a placeholder.
-- **State level only** → no city/metro/ZIP pages yet (structure is ready).
+- **State-level ZHVI data** is in the monthly refresh; previously generated City ZHVI/ZORI snapshots are excluded from indexing if not refreshed.
+- **Rent vs buy** is an illustrative multi-year model with user-provided rent, not a claim of live local rental inventory.
 - ZHVI values are smoothed estimates and **will not match** a specific listing,
   appraisal, or lender valuation.
 - Tax/insurance/PMI defaults are national approximations; enter local figures for accuracy.

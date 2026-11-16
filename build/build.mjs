@@ -1,7 +1,7 @@
 // Build script: parses CSVs, normalizes regions, and renders the static site.
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { buildRegions, incomeNeeded, DEFAULTS } from "./data.mjs";
+import { buildRegions, incomeNeeded, monthlyPI, DEFAULTS } from "./data.mjs";
 import { buildCities } from "./cities.mjs";
 import * as T from "./templates.mjs";
 
@@ -28,6 +28,32 @@ function write(relPath, html) {
   writeFileSync(full, html);
 }
 
+// Mark unrefreshed, checked-in city pages as historical rather than current.
+function markArchivedCityPages(cities) {
+  const allowed = new Set(cities.map((c) => c.stateSlug + "/" + c.citySlug));
+  const statesDir = join(OUT, "states");
+  if (!existsSync(statesDir)) return;
+  for (const state of readdirSync(statesDir, { withFileTypes: true })) {
+    if (!state.isDirectory()) continue;
+    const stateDir = join(statesDir, state.name);
+    for (const city of readdirSync(stateDir, { withFileTypes: true })) {
+      if (!city.isDirectory() || allowed.has(state.name + "/" + city.name)) continue;
+      const htmlPath = join(stateDir, city.name, "index.html");
+      if (!existsSync(htmlPath)) continue;
+      let html = readFileSync(htmlPath, "utf8");
+      if (!/<meta\s+name="robots"\s+content="noindex/i.test(html)) {
+        html = html.replace("</head>", '<meta name="robots" content="noindex,follow">\n</head>');
+      }
+      html = html.replace(/<!-- ad slot: [\s\S]*?-->\s*<div class="ad-slot[^"]*"[^>]*>[\s\S]*?<\/div>/g, "");
+      if (!html.includes("data-archived-city")) {
+        html = html.replace("</header>", `</header>
+<div class="archived-data-notice" data-archived-city><div class="wrap"><strong>Archived city estimate:</strong> This city's Zillow data is not included in the current update. Historical values and mortgage examples shown below may be outdated. For the latest available state-level data, <a href="/states/">browse state calculators</a> or <a href="/compare-markets/">compare states</a>.</div></div>`);
+      }
+      writeFileSync(htmlPath, html);
+    }
+  }
+}
+
 // Shared page shell.
 function page(depth, meta, bodyHtml) {
   return (
@@ -50,6 +76,84 @@ const appSchema = (name, url, desc) => ({
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   description: desc,
 });
+
+function rateSensitivity(hv, tax) {
+  const monthly = (price, rate) => {
+    if (!Number.isFinite(price) || price <= 0) return null;
+    const loan = price * 0.8;
+    return monthlyPI(loan, rate, DEFAULTS.termYears) + price * tax / 1200 +
+      price * DEFAULTS.insuranceRatePct / 1200;
+  };
+  const rows = [DEFAULTS.rate - 1, DEFAULTS.rate, DEFAULTS.rate + 1].map((rate) => {
+    const cells = [hv.starter, hv.typical, hv.higher].map((price) =>
+      `<td>${price ? money(monthly(price, rate)) : "—"}</td>`
+    ).join("");
+    return `<tr${rate === DEFAULTS.rate ? ' class="featured"' : ""}><td>${pct(rate)}%${rate === DEFAULTS.rate ? " · default" : ""}</td>${cells}</tr>`;
+  }).join("");
+  const table = `<table class="data"><thead><tr><th>Illustrative fixed rate</th><th>Starter home</th><th>Typical home</th><th>Higher-budget home</th></tr></thead><tbody>${rows}</tbody></table>`;
+  const impact = Math.round(monthly(hv.typical, DEFAULTS.rate + 1) - monthly(hv.typical, DEFAULTS.rate));
+  return { table, impact };
+}
+
+function buildDataUpdates(regions, cities) {
+  const depth = 1;
+  const meta = {
+    title: "Data Updates and Coverage | Home Payment Atlas",
+    description: "See the Zillow source month, latest dataset refresh, available regions and limitations behind Home Payment Atlas's calculators.",
+    canonical: "/data-updates/"
+  };
+  const crumb = T.breadcrumbs(depth, [{ name: "Home", href: "index.html" }, { name: "Data Updates" }], meta.canonical);
+  meta.schema = [crumb.schema];
+
+  let manifest = null;
+  try {
+    manifest = JSON.parse(readFileSync(join(process.cwd(), "csv", "zillow-manifest.json"), "utf8"));
+  } catch { /* A local build may omit the optional manifest. */ }
+  const sourceMonths = [...new Set(regions.map((r) => r.latestDate).filter(Boolean))].sort();
+  const newest = sourceMonths[sourceMonths.length - 1] || "Not available";
+  const oldest = sourceMonths[0] || "Not available";
+  const refresh = /^\d{4}-\d{2}-\d{2}/.exec(manifest?.generatedAt || "")?.[0] || "Not recorded";
+  const validSources = regions.filter((r) => Number(r.homeValues?.typical) > 0).length;
+  const req = manifest?.requiredGroups?.stateLaunch;
+  const requiredStatus = req ? `${req.found || 0} of ${req.total || 10} required state CSVs found` : "Dataset manifest not available";
+
+  const body = `
+${crumb.html}
+<section class="section-tight"><div class="wrap">
+  <span class="eyebrow">Evidence & maintenance</span>
+  <h1>Data updates and coverage</h1>
+  <p class="lead" style="color:var(--ink-700);max-width:70ch">A trustworthy estimate needs a dated source. Here's what data powers the Atlas today, when it was refreshed, and where we still rely on assumptions rather than local measurements.</p>
+  <div class="stat-tiles" style="margin-top:24px">
+    <div class="stat-tile"><div class="k">Most recent state-value month</div><div class="v">${newest}</div><div class="sub">Zillow ZHVI source observation</div></div>
+    <div class="stat-tile"><div class="k">Dataset refresh checked</div><div class="v">${refresh}</div><div class="sub">Download manifest timestamp (UTC)</div></div>
+    <div class="stat-tile"><div class="k">State markets covered</div><div class="v">${validSources}</div><div class="sub">50 states plus Washington, DC</div></div>
+    <div class="stat-tile"><div class="k">Current curated city datasets</div><div class="v">${cities.length}</div><div class="sub">City pages require separate city-source updates</div></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="grid grid-2">
+  <article class="card compare-prose">
+    <h2>Which values are sourced?</h2>
+    <p>The prices used in state and comparison tools come from <a href="https://www.zillow.com/research/data/" target="_blank" rel="noopener noreferrer">Zillow Research</a> ZHVI, a smoothed and seasonally adjusted index of typical home values. The site uses middle-tier, lower-tier and upper-tier values, plus single-family, condo, and bedroom cuts when available.</p>
+    <p>The underlying state-level source months currently range from <strong>${oldest}</strong> through <strong>${newest}</strong>. Each individual calculator shows the exact observation month it used. This is a research index, <strong>not a listing feed</strong> or a lender appraisal.</p>
+    <p><strong>Source import status:</strong> ${requiredStatus}. New Zillow data is checked on the monthly update schedule; failed or unavailable updates may leave the last verified data in place.</p>
+  </article>
+  <article class="card compare-prose">
+    <h2>What the site estimates</h2>
+    <p>Mortgage principal and interest are calculated from a fixed-rate loan formula. Property taxes, homeowners insurance, PMI, HOA dues, closing costs, cash needed, and income guidelines are modeled assumptions. A default 6.5% rate is a hypothetical example and <strong>not a current mortgage offer</strong>.</p>
+    <p>Property-tax rates are statewide approximations last reviewed in the site's <a href="../methodology/">methodology</a>; actual county assessments, exemptions, HOA fees and insurance quotations may vary dramatically. You can change the assumptions in the <a href="../mortgage-calculator/">mortgage calculator</a> or <a href="../compare-markets/">state comparison</a>.</p>
+  </article>
+</div></div></section>
+<section class="section"><div class="wrap prose">
+  <h2>How city coverage is handled</h2>
+  <p>City ZHVI and rent datasets require separate source downloads. When those datasets are missing from a build, older bookmarked city pages remain accessible only as explicitly labeled <strong>archived data</strong> and are excluded from search indexing. We do not silently present an older city snapshot as a newly refreshed market estimate.</p>
+  <h2>Report a correction</h2>
+  <p>If you spot a broken calculator, an unexpected result, an outdated methodology claim, or a data-coverage problem, <a href="https://github.com/mrboss302/home-payment-atlas/issues/new" target="_blank" rel="noopener noreferrer">open a public issue in the project repository</a>. Please include the page URL, the inputs, and what you expected. Do not post personal financial details in a public issue.</p>
+  <p>For the full formula and sources, see <a href="../methodology/">Methodology</a>. The project is independent and is not endorsed by Zillow or any mortgage provider.</p>
+  ${T.disclaimer()}
+</div></section>`;
+  write("data-updates/index.html", page(depth, meta, body));
+}
 
 // ---------------------------------------------------------------- HOMEPAGE
 function buildHome(regions) {
@@ -120,13 +224,26 @@ function buildHome(regions) {
   </div>
 </section>
 
+<section class="section-tight">
+  <div class="wrap">
+    <div class="compare-spotlight card">
+      <div>
+        <span class="eyebrow">A different way to plan</span>
+        <h2>Two states. One honest comparison.</h2>
+        <p>Compare typical or starter home values, monthly payments, property taxes, upfront cash, and the impact of a higher interest rate. Use the same mortgage assumptions for both markets.</p>
+      </div>
+      <a class="btn btn-primary" href="compare-markets/index.html">Compare two states</a>
+    </div>
+  </div>
+</section>
+
 ${T.adSlot("horizontal", "leaderboard, below the hero")}
 
 <section class="section">
   <div class="wrap">
     <div class="card" style="padding:32px">
       <h2>Built on real home-value data</h2>
-      <p style="color:var(--ink-700);max-width:65ch">Home-price examples come from <strong>Zillow Research</strong> Home Value Index (ZHVI) data — the typical value of homes in the 35th–65th percentile range, plus starter (lower-tier) and higher-budget (upper-tier) cuts. We use the latest available month (${regions[0].latestDate}) for each state. Read the <a href="methodology/index.html">methodology</a>.</p>
+      <p style="color:var(--ink-700);max-width:65ch">Home-price examples come from <strong>Zillow Research</strong> Home Value Index (ZHVI) data — the typical value of homes in the 35th–65th percentile range, plus starter (lower-tier) and higher-budget (upper-tier) cuts. We use the latest available observation for each state, as dated on its individual page. Read the <a href="methodology/index.html">methodology</a>.</p>
     </div>
   </div>
 </section>
@@ -242,6 +359,7 @@ ${crumb.html}
 <section class="section-tight"><div class="wrap">
   <h1>State Mortgage Calculators</h1>
   <p class="lead" style="max-width:62ch;color:var(--ink-700)">Pick a state to open a calculator prefilled with local home-price examples from Zillow data. Prices shown are the typical home value (${regions[0].latestDate}).</p>
+  <p class="hint">Not sure where to begin? <a href="../compare-markets/index.html">Compare two states side by side</a> using the same mortgage terms.</p>
 </div></section>
 <section class="section-tight"><div class="wrap">
   <div class="state-grid">${links}</div>
@@ -269,6 +387,7 @@ function buildStatePage(r, regions, citiesInState = []) {
   ], meta.canonical);
 
   const tax = r.taxRatePct;
+  const rateScenario = rateSensitivity(hv, tax);
   const ctx = r.context;
   // Per-state calculator defaults: same as global, but with the state tax rate + a note.
   const stateDefaults = Object.assign({}, DEFAULTS, {
@@ -394,11 +513,25 @@ ${T.adSlot("horizontal", "in-content, after first result")}
   <div class="card table-card" style="margin-top:16px">${valueTable}</div>
   <p class="hint" style="margin-top:10px">Home values are <strong>measured data</strong> from Zillow Research (ZHVI), ${r.latestDate}. Click a price chip in the calculator to load one instantly.</p>
 </div></section>
+<section class="section-tight"><div class="wrap">
+  <div class="compare-spotlight card">
+    <div><h2>Is ${name} the right fit?</h2>
+    <p>Compare the same home type, down payment, and hypothetical interest rate with another state. Statewide prices and property-tax estimates may differ, while city and county costs still need local verification.</p></div>
+    <a class="btn btn-primary" href="../../compare-markets/index.html?a=${r.slug}">Compare ${name}</a>
+  </div>
+</div></section>
 
 <section class="section"><div class="wrap">
   <h2>Monthly payment examples in ${name}</h2>
   <p style="color:var(--ink-500);max-width:64ch">Estimated full monthly payment (principal, interest, ${name} property tax at ${pct(tax)}%, insurance and PMI) at ${pct(DEFAULTS.rate)}% over ${DEFAULTS.termYears} years. PMI applies under 20% down. These payment figures are <strong>calculated assumptions</strong>, not measured data.</p>
   <div class="card table-card" style="margin-top:16px">${pmtTable}</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2>How changing interest rates affects a home in ${name}</h2>
+  <p style="color:var(--ink-700);max-width:76ch">Under the default scenario, a one-percentage-point increase in the hypothetical mortgage rate would add about <strong>${money(rateScenario.impact)}/month</strong> to the estimated payment for a typical ${name} home. The table below compares starter, typical, and higher-budget home values at three illustrative fixed rates, holding the other assumptions constant.</p>
+  <div class="card table-card" style="margin-top:16px">${rateScenario.table}</div>
+  <p class="hint" style="margin-top:10px">Illustrative assumptions only, <strong>not live rate offers</strong>: ${DEFAULTS.termYears}-year mortgage, 20% down, ${pct(tax)}% statewide effective property-tax estimate, ${pct(DEFAULTS.insuranceRatePct)}% insurance, no PMI, and no HOA. Verify local costs and lender quotes. <a href="../../compare-markets/index.html?a=${r.slug}">Compare ${name} with another state</a>.</p>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -727,10 +860,13 @@ ${crumb.html}
     <li><strong>Source:</strong> Zillow Research Home Value Index (ZHVI), state level, smoothed and seasonally adjusted.</li>
     <li><strong>Typical</strong> value is the middle price tier (35th–65th percentile). <strong>Starter</strong> uses the lower tier and <strong>higher-budget</strong> the upper tier.</li>
     <li>We also surface single-family, condo/co-op, and bedroom-count values where available.</li>
-    <li>We extract the latest available month for each state (currently ${regions[0].latestDate}).</li>
+    <li>We extract the latest available non-empty month for each state and print its date alongside each figure. Update timing can differ across states.</li>
     <li>Values are Zillow's estimates and may not match current listings, appraisals, or lender valuations.</li>
   </ul>
 
+  <h2>Comparing two state markets</h2>
+  <p>Our <a href="../compare-markets/index.html">state comparison workspace</a> uses the same selected home-value tier and hypothetical mortgage terms for both states. The home price comes from each state's Zillow ZHVI observation, while principal and interest, property tax, insurance, PMI, cash to close, and the 28% housing-income guideline are <strong>modeled estimates</strong>. Statewide effective property-tax rates are rough defaults, not local tax bills, and the interest rate is not a real-time market quote. A one-percentage-point rate stress test holds the other assumptions constant.</p>
+  <p>When choosing where to move, a state average can hide major neighborhood and county differences. Compare current listings, actual insurance quotes, property-specific tax assessments, HOA charges, commute costs, and lender offers before committing to a purchase.</p>
   <h2>Mortgage math (calculated)</h2>
   <p>Monthly principal and interest use the standard fixed-rate formula:</p>
   <p style="font-family:var(--serif);font-size:1.1rem">M = P · r(1 + r)ⁿ / ((1 + r)ⁿ − 1)</p>
@@ -860,7 +996,7 @@ ${crumb.html}
   <p>Home Payment Atlas exists to answer one question clearly: <em>what would this home really cost each month?</em></p>
   <p>Most calculators stop at principal and interest. Real monthly cost includes property taxes, insurance, PMI, and HOA — so that's what we show, in one calm, readable view. We pair the math with local home-value data from Zillow Research so you can ground your plan in realistic prices for your state.</p>
   <p>Our principle: a planning tool should feel trustworthy and unhurried, not like a lead-generation funnel. We label estimates honestly, keep advertising tasteful and out of the way, and never present results as approvals or offers.</p>
-  <p>Start with the <a href="../mortgage-calculator/index.html">mortgage calculator</a> or browse <a href="../states/index.html">state calculators</a>.</p>
+  <p>Start with the <a href="../mortgage-calculator/index.html">mortgage calculator</a>, browse <a href="../states/index.html">state calculators</a>, or <a href="../compare-markets/index.html">compare two state markets with identical assumptions</a>. Every state comparison uses Zillow home-value estimates and a transparent, editable payment model rather than claiming to predict loan offers.</p>
 </div></section>`;
   write("about/index.html", page(depth, meta, body));
 }
@@ -950,15 +1086,16 @@ ${crumb.html}
 function buildSitemap(regions, cities = []) {
   const urls = [
     "/", "/mortgage-calculator/", "/states/", "/methodology/", "/privacy/",
-    "/about/", "/examples/", "/rent-vs-buy-calculator/", "/pmi-calculator/",
+    "/about/", "/examples/", "/compare-markets/", "/data-updates/", "/rent-vs-buy-calculator/", "/pmi-calculator/",
     "/closing-cost-calculator/", "/refinance-calculator/",
     "/mortgage-on-300k-house/", "/income-needed-for-400k-house/",
     ...regions.map((r) => `/states/${r.slug}/`),
     ...cities.map((c) => c.intendedUrl),
   ];
-  const lastmod = new Date().toISOString().slice(0, 10);
+  // Avoid claiming every page was substantively updated whenever CI rebuilds.
+  // Reintroduce <lastmod> only with per-page source/data revision tracking.
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
-    .map((u) => `  <url><loc>${T.SITE.url}${u}</loc><lastmod>${lastmod}</lastmod></url>`)
+    .map((u) => `  <url><loc>${T.SITE.url}${u}</loc></url>`)
     .join("\n")}\n</urlset>\n`;
   write("sitemap.xml", xml);
   // Launch-safe robots.txt: allow full crawl, expose the sitemap on the
@@ -1247,6 +1384,7 @@ for (const c of cities) {
 buildHome(regions);
 buildCalculator();
 buildStatesIndex(regions, cities);
+buildDataUpdates(regions, cities);
 regions.forEach((r) => buildStatePage(r, regions, citiesByState.get(r.slug) || []));
 cities.forEach((c) => buildCityPage(c, cities, regions));
 buildMethodology(regions);
@@ -1426,6 +1564,7 @@ build404();
 buildOgImage();
 buildIcons();
 buildSitemap(regions, cities);
+markArchivedCityPages(cities);
 
 // Report
 const found = Object.entries(detected).filter(([, v]) => v.found).map(([k]) => k);

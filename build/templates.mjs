@@ -16,7 +16,7 @@ export const SITE = {
 // -------------------------------------------------------------------------
 // Monetization config — ONE place to wire up advertising.
 // Set ADSENSE_CLIENT_ID at build time to switch every ad slot from a tasteful
-// placeholder to a real AdSense unit. Leave it blank to keep placeholders.
+// placeholder to a real AdSense unit. Leave it blank to omit unused slots.
 //   ADSENSE_CLIENT_ID=ca-pub-1234567890123456 node build/build.mjs
 // Per-placement slot IDs can be supplied via env or edited here directly.
 // -------------------------------------------------------------------------
@@ -37,7 +37,7 @@ export const ADS = {
   },
   // Manual ad-unit slot IDs by placement. Create these in the AdSense dashboard
   // and supply via env. Until a real numeric slot ID is set, that placement
-  // stays a tasteful placeholder (we never ship broken <ins> with a fake slot).
+  // renders nothing until configured (never show empty advertising boxes).
   slots: {
     horizontal: process.env.ADSENSE_SLOT_HORIZONTAL || "",
     sidebar: process.env.ADSENSE_SLOT_SIDEBAR || "",
@@ -135,6 +135,7 @@ function header(depth) {
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="${h("mortgage-calculator/index.html")}">Calculator</a>
       <a href="${h("states/index.html")}">States</a>
+      <a href="${h("compare-markets/index.html")}">Compare States</a>
       <a href="${h("methodology/index.html")}">Methodology</a>
       <a href="${h("privacy/index.html")}">Privacy</a>
     </nav>
@@ -158,6 +159,7 @@ function footer(depth) {
         <a href="${h("pmi-calculator/index.html")}">PMI Calculator</a>
         <a href="${h("closing-cost-calculator/index.html")}">Closing Cost Calculator</a>
         <a href="${h("refinance-calculator/index.html")}">Refinance Calculator</a>
+        <a href="${h("compare-markets/index.html")}">Compare States</a>
       </div>
       <div>
         <h4>States</h4>
@@ -171,6 +173,7 @@ function footer(depth) {
         <h4>About</h4>
         <a href="${h("methodology/index.html")}">Methodology</a>
         <a href="${h("about/index.html")}">About</a>
+        <a href="${h("data-updates/index.html")}">Data updates &amp; coverage</a>
         <a href="${h("privacy/index.html")}">Privacy &amp; Disclaimer</a>
       </div>
     </div>
@@ -402,7 +405,7 @@ function faqSection(items) {
   return { html, schema };
 }
 
-// Ad slot. When AdSense is configured it renders a real responsive unit;
+// Ad slot. Render only when a verified placement ID is configured;
 // otherwise it keeps the tasteful labeled placeholder. Same outer wrapper either
 // way so layout/spacing never shifts. Always clearly marked "Advertisement".
 function adSlot(kind, label) {
@@ -416,9 +419,10 @@ function adSlot(kind, label) {
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>`;
   }
-  // Placeholder (no AdSense configured): tasteful and honest. The `label` arg is
-  // kept only as an internal HTML comment documenting the slot's placement intent.
-  return `<!-- ad slot: ${label} --><div class="ad-slot ${cls}" role="complementary" aria-label="Advertisement"><span>Advertisement</span><span style="opacity:.7;text-transform:none;letter-spacing:0;font-size:.72rem">This space helps keep the calculators free.</span></div>`;
+  // No real placement ID? Do not render an empty ad container. The AdSense
+  // site-verification/Auto Ads loader remains in <head> for review.
+  return "";
+
 }
 
 function disclaimer() {
