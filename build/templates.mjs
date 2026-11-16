@@ -173,6 +173,7 @@ function footer(depth) {
         <h4>About</h4>
         <a href="${h("methodology/index.html")}">Methodology</a>
         <a href="${h("about/index.html")}">About</a>
+        <a href="${h("data-updates/index.html")}">Data updates &amp; coverage</a>
         <a href="${h("privacy/index.html")}">Privacy &amp; Disclaimer</a>
       </div>
     </div>
