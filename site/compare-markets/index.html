@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare State Home Costs | Home Payment Atlas</title>
+<meta name="description" content="Compare two states' estimated mortgage payments, home values, property taxes, upfront cash, and income needed using the same assumptions.">
+<link rel="canonical" href="https://homepaymentatlas.com/compare-markets/">
+<meta property="og:title" content="Compare State Home Costs | Home Payment Atlas">
+<meta property="og:description" content="Compare two states' estimated mortgage payments, home values, property taxes, upfront cash, and income needed using the same assumptions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://homepaymentatlas.com/compare-markets/">
+<meta property="og:site_name" content="Home Payment Atlas">
+<meta property="og:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://homepaymentatlas.com/assets/og-image.svg">
+<meta name="theme-color" content="#faf7f2">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<link rel="manifest" href="../site.webmanifest">
+<script>window.atlasDataLayer=window.atlasDataLayer||[];window.trackAtlasEvent=window.trackAtlasEvent||function(n,p){try{window.atlasDataLayer.push({event:n,payload:p||{},ts:Date.now()});if(window.gtag){window.gtag('event',n,p||{});}if(window.plausible){window.plausible(n,{props:p||{}});}}catch(e){}};</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3840656918521680" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Compare State Home Costs","url":"https://homepaymentatlas.com/compare-markets/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Interactive two-state comparison of housing prices and hypothetical monthly mortgage costs"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://homepaymentatlas.com/"},{"@type":"ListItem","position":2,"name":"Compare States","item":"https://homepaymentatlas.com/compare-markets/"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2b2622" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../mortgage-calculator/index.html">Calculator</a>
+      <a href="../states/index.html">States</a>
+      <a href="../methodology/index.html">Methodology</a>
+      <a href="../privacy/index.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Compare States</span></nav>
+<main id="main">
+<section class="section-tight compare-intro">
+  <div class="wrap">
+    <span class="eyebrow">Two markets · One set of assumptions</span>
+    <h1>Compare the real monthly cost of two states</h1>
+    <p class="lead">Home prices tell only part of the story. Put two states side by side to see estimated monthly mortgage costs, upfront cash, property taxes, and suggested household income. Choose a home type, down payment, and hypothetical interest rate, then change the assumptions to see what matters.</p>
+    <p class="hint">Home values: Zillow Research ZHVI, dated per state. Mortgage interest and expense rates are <strong>illustrative defaults, not live quotes.</strong> State averages are not city, county, or neighborhood prices.</p>
+  </div>
+</section>
+
+<section class="section-tight" aria-labelledby="compare-tool-title">
+<div class="wrap" data-market-compare>
+  <div class="compare-tool card">
+    <div class="compare-head">
+      <div><h2 id="compare-tool-title">Your comparison</h2><p>Start with two states, then adjust the same mortgage terms for both.</p></div>
+      <span class="compare-steps">1 · Choose markets</span>
+    </div>
+    <form class="compare-form" onsubmit="return false">
+      <div class="compare-row compare-row--states">
+        <div class="compare-control">
+          <label for="compare-a">First state</label>
+          <select id="compare-a" autocomplete="off"><option value="">Loading state data…</option></select>
+        </div>
+        <div class="compare-control">
+          <label for="compare-b">Second state</label>
+          <select id="compare-b" autocomplete="off"><option value="">Loading state data…</option></select>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-control">
+          <label for="compare-type">Home type / price tier</label>
+          <select id="compare-type">
+            <option value="typical">Typical home · middle tier</option>
+            <option value="starter">Starter · lower tier</option>
+            <option value="higher">Higher budget · upper tier</option>
+            <option value="singleFamily">Single-family home</option>
+            <option value="condo">Condo / co-op</option>
+          </select>
+        </div>
+        <div class="compare-control">
+          <label for="compare-down">Down payment (%)</label>
+          <input id="compare-down" type="number" min="0" max="100" step="1" value="20" inputmode="decimal">
+        </div>
+        <div class="compare-control">
+          <label for="compare-rate">Interest rate assumption (%)</label>
+          <input id="compare-rate" type="number" min="0" max="25" step="0.1" value="6.5" inputmode="decimal">
+        </div>
+        <div class="compare-control">
+          <label for="compare-term">Mortgage term</label>
+          <select id="compare-term">
+            <option value="30" selected>30 years</option><option value="20">20 years</option><option value="15">15 years</option>
+          </select>
+        </div>
+        <div class="compare-control">
+          <label for="compare-hoa">Monthly HOA ($), for each home</label>
+          <input id="compare-hoa" type="number" min="0" step="25" value="0" inputmode="decimal">
+        </div>
+      </div>
+      <p class="hint">Both states use the same rate, down payment, mortgage term, HOA, insurance (0.35%/year), PMI (0.5%/year if down payment is below 20%) and closing costs (3% of price). State property-tax rates differ and are rough statewide defaults, not verified county bills.</p>
+    </form>
+  </div>
+
+  <p id="compare-status" class="compare-status" role="status" aria-live="polite">Loading state home-value data…</p>
+  <div id="compare-report" hidden>
+    <div class="compare-summary card">
+      <h2>What the numbers suggest</h2>
+      <p id="compare-summary" aria-live="polite"></p>
+      <button type="button" class="btn btn-ghost" id="compare-copy">Copy comparison link</button>
+    </div>
+    <div class="compare-grid">
+      <article class="compare-card card" aria-labelledby="compare-a-name">
+        <div class="compare-card__heading"><span class="compare-kicker">Market A</span><h3 id="compare-a-name">—</h3><p id="compare-a-month">—</p></div>
+        <div class="compare-kicker">Estimated total per month</div><div class="compare-amount" id="compare-a-monthly">—</div>
+        <div class="compare-price"><span>Typical home-value tier</span><strong id="compare-a-price">—</strong></div>
+        <dl class="compare-breakdown">
+          <div><dt>Principal &amp; interest</dt><dd id="compare-a-principal">—</dd></div>
+          <div><dt>Property tax / month</dt><dd id="compare-a-tax">—</dd></div>
+          <div><dt>Home insurance / month</dt><dd id="compare-a-insurance">—</dd></div>
+          <div><dt>PMI / month</dt><dd id="compare-a-pmi">—</dd></div>
+          <div><dt>Estimated cash to close</dt><dd id="compare-a-cash">—</dd></div>
+          <div><dt>Suggested annual gross income (28% housing ratio)</dt><dd id="compare-a-income">—</dd></div>
+          <div><dt>If interest is 1 percentage point higher</dt><dd id="compare-a-stress">—</dd></div>
+        </dl><a class="compare-state-link" id="compare-a-link" href="../states/">View state data →</a>
+      </article>
+      <article class="compare-card card" aria-labelledby="compare-b-name">
+        <div class="compare-card__heading"><span class="compare-kicker">Market B</span><h3 id="compare-b-name">—</h3><p id="compare-b-month">—</p></div>
+        <div class="compare-kicker">Estimated total per month</div><div class="compare-amount" id="compare-b-monthly">—</div>
+        <div class="compare-price"><span>Typical home-value tier</span><strong id="compare-b-price">—</strong></div>
+        <dl class="compare-breakdown">
+          <div><dt>Principal &amp; interest</dt><dd id="compare-b-principal">—</dd></div>
+          <div><dt>Property tax / month</dt><dd id="compare-b-tax">—</dd></div>
+          <div><dt>Home insurance / month</dt><dd id="compare-b-insurance">—</dd></div>
+          <div><dt>PMI / month</dt><dd id="compare-b-pmi">—</dd></div>
+          <div><dt>Estimated cash to close</dt><dd id="compare-b-cash">—</dd></div>
+          <div><dt>Suggested annual gross income (28% housing ratio)</dt><dd id="compare-b-income">—</dd></div>
+          <div><dt>If interest is 1 percentage point higher</dt><dd id="compare-b-stress">—</dd></div>
+        </dl><a class="compare-state-link" id="compare-b-link" href="../states/">View state data →</a>
+      </article>
+    </div>
+    <p class="hint" style="margin-top:14px">Monthly totals include principal, interest, estimated property taxes, homeowners insurance, PMI where applicable, and the entered HOA amount. Cash to close includes down payment plus an illustrative 3% closing-cost allowance; it excludes moving costs, repairs, and reserves. Real rates, taxes, insurance, HOA, and lending decisions vary.</p>
+  </div>
+</div>
+</section>
+
+<section class="section compare-guide">
+  <div class="wrap">
+    <div class="grid grid-2">
+      <article class="card compare-prose">
+        <h2>Why a lower home price may not mean a lower monthly payment</h2>
+        <p>A mortgage payment depends on the amount financed and the interest rate, but ongoing costs also include property taxes, insurance, PMI, and possibly HOA fees. Our comparison applies the same rate and down payment to each state while allowing the approximate property-tax assumption to differ.</p>
+        <p>For example, at a hypothetical <strong>6.5% fixed rate</strong>, a $400,000 home with 20% down leaves a $320,000 loan. Principal and interest alone are about <strong>$2,023 a month</strong> over 30 years. At an illustrative 1.05% property tax and 0.35% insurance, the estimated total is about <strong>$2,489 per month</strong>, before HOA dues. These figures are calculated examples, not current lender rates or local quotations.</p>
+        <p>When you compare a different home-value tier, the underlying price changes. This is why you should compare similar property types and check actual listings and county tax bills before drawing conclusions.</p>
+      </article>
+      <article class="card compare-prose">
+        <h2>How to use this comparison responsibly</h2>
+        <ol>
+          <li>Start with two states and choose the same home type in both. The middle-tier Zillow estimate is not the median listing price.</li>
+          <li>Use a rate offered by your own lender, not the default assumption. Try a rate one point higher to see the sensitivity.</li>
+          <li>Check estimated upfront cash and the 28% housing-income guideline. Neither is a lending qualification decision.</li>
+          <li>Follow each state's page for additional price tiers. Research your target county, neighborhood, insurance quote, and HOA before making a purchase decision.</li>
+        </ol>
+        <p>Data source: <a href="https://www.zillow.com/research/data/" target="_blank" rel="noopener noreferrer">Zillow Research</a>. See our <a href="../methodology/">methodology and limitations</a> for the mortgage formula and assumptions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section-tight"><div class="wrap"><div class="disclaimer"><strong>Planning estimates only.</strong> A state-wide housing index does not represent a specific house or an actual mortgage offer. The comparison does not include maintenance, utilities, moving costs, tax deductions, or mortgage approval requirements. Verify results independently before financial decisions.</div></div></section>
+</main>
+<script src="../assets/market-compare.js" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="../index.html" style="margin-bottom:12px"><svg class="pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" fill="#c2693f"/><circle cx="12" cy="10" r="2.6" fill="#fffdfa"/></svg> Home Payment Atlas</a>
+        <p style="max-width:36ch">Know the monthly cost before you tour the house. Clear, calm home-payment planning built on Zillow Research home-value data.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../mortgage-calculator/index.html">Mortgage Calculator</a>
+        <a href="../rent-vs-buy-calculator/index.html">Rent vs Buy Calculator</a>
+        <a href="../pmi-calculator/index.html">PMI Calculator</a>
+        <a href="../closing-cost-calculator/index.html">Closing Cost Calculator</a>
+        <a href="../refinance-calculator/index.html">Refinance Calculator</a>
+      </div>
+      <div>
+        <h4>States</h4>
+        <a href="../states/index.html">All States</a>
+        <a href="../states/maryland/index.html">Maryland</a>
+        <a href="../states/texas/index.html">Texas</a>
+        <a href="../states/california/index.html">California</a>
+        <a href="../states/florida/index.html">Florida</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="../methodology/index.html">Methodology</a>
+        <a href="../about/index.html">About</a>
+        <a href="../privacy/index.html">Privacy &amp; Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0">Estimates only — not financial advice, a loan offer, or a guarantee of rates, approval, taxes, insurance, or home values. Home-value examples use Zillow Research (ZHVI) data and may not reflect current listings or appraisals. © 2026 Home Payment Atlas.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
