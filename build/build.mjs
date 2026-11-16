@@ -120,6 +120,19 @@ function buildHome(regions) {
   </div>
 </section>
 
+<section class="section-tight">
+  <div class="wrap">
+    <div class="compare-spotlight card">
+      <div>
+        <span class="eyebrow">A different way to plan</span>
+        <h2>Two states. One honest comparison.</h2>
+        <p>Compare typical or starter home values, monthly payments, property taxes, upfront cash, and the impact of a higher interest rate. Use the same mortgage assumptions for both markets.</p>
+      </div>
+      <a class="btn btn-primary" href="compare-markets/index.html">Compare two states</a>
+    </div>
+  </div>
+</section>
+
 ${T.adSlot("horizontal", "leaderboard, below the hero")}
 
 <section class="section">
@@ -242,6 +255,7 @@ ${crumb.html}
 <section class="section-tight"><div class="wrap">
   <h1>State Mortgage Calculators</h1>
   <p class="lead" style="max-width:62ch;color:var(--ink-700)">Pick a state to open a calculator prefilled with local home-price examples from Zillow data. Prices shown are the typical home value (${regions[0].latestDate}).</p>
+  <p class="hint">Not sure where to begin? <a href="../compare-markets/index.html">Compare two states side by side</a> using the same mortgage terms.</p>
 </div></section>
 <section class="section-tight"><div class="wrap">
   <div class="state-grid">${links}</div>
@@ -393,6 +407,13 @@ ${T.adSlot("horizontal", "in-content, after first result")}
   <p style="color:var(--ink-700);max-width:74ch">${snapshot}</p>
   <div class="card table-card" style="margin-top:16px">${valueTable}</div>
   <p class="hint" style="margin-top:10px">Home values are <strong>measured data</strong> from Zillow Research (ZHVI), ${r.latestDate}. Click a price chip in the calculator to load one instantly.</p>
+</div></section>
+<section class="section-tight"><div class="wrap">
+  <div class="compare-spotlight card">
+    <div><h2>Is ${name} the right fit?</h2>
+    <p>Compare the same home type, down payment, and hypothetical interest rate with another state. Statewide prices and property-tax estimates may differ, while city and county costs still need local verification.</p></div>
+    <a class="btn btn-primary" href="../../compare-markets/index.html?a=${r.slug}">Compare ${name}</a>
+  </div>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -731,6 +752,9 @@ ${crumb.html}
     <li>Values are Zillow's estimates and may not match current listings, appraisals, or lender valuations.</li>
   </ul>
 
+  <h2>Comparing two state markets</h2>
+  <p>Our <a href="../compare-markets/index.html">state comparison workspace</a> uses the same selected home-value tier and hypothetical mortgage terms for both states. The home price comes from each state's Zillow ZHVI observation, while principal and interest, property tax, insurance, PMI, cash to close, and the 28% housing-income guideline are <strong>modeled estimates</strong>. Statewide effective property-tax rates are rough defaults, not local tax bills, and the interest rate is not a real-time market quote. A one-percentage-point rate stress test holds the other assumptions constant.</p>
+  <p>When choosing where to move, a state average can hide major neighborhood and county differences. Compare current listings, actual insurance quotes, property-specific tax assessments, HOA charges, commute costs, and lender offers before committing to a purchase.</p>
   <h2>Mortgage math (calculated)</h2>
   <p>Monthly principal and interest use the standard fixed-rate formula:</p>
   <p style="font-family:var(--serif);font-size:1.1rem">M = P · r(1 + r)ⁿ / ((1 + r)ⁿ − 1)</p>
@@ -860,7 +884,7 @@ ${crumb.html}
   <p>Home Payment Atlas exists to answer one question clearly: <em>what would this home really cost each month?</em></p>
   <p>Most calculators stop at principal and interest. Real monthly cost includes property taxes, insurance, PMI, and HOA — so that's what we show, in one calm, readable view. We pair the math with local home-value data from Zillow Research so you can ground your plan in realistic prices for your state.</p>
   <p>Our principle: a planning tool should feel trustworthy and unhurried, not like a lead-generation funnel. We label estimates honestly, keep advertising tasteful and out of the way, and never present results as approvals or offers.</p>
-  <p>Start with the <a href="../mortgage-calculator/index.html">mortgage calculator</a> or browse <a href="../states/index.html">state calculators</a>.</p>
+  <p>Start with the <a href="../mortgage-calculator/index.html">mortgage calculator</a>, browse <a href="../states/index.html">state calculators</a>, or <a href="../compare-markets/index.html">compare two state markets with identical assumptions</a>. Every state comparison uses Zillow home-value estimates and a transparent, editable payment model rather than claiming to predict loan offers.</p>
 </div></section>`;
   write("about/index.html", page(depth, meta, body));
 }
@@ -950,15 +974,16 @@ ${crumb.html}
 function buildSitemap(regions, cities = []) {
   const urls = [
     "/", "/mortgage-calculator/", "/states/", "/methodology/", "/privacy/",
-    "/about/", "/examples/", "/rent-vs-buy-calculator/", "/pmi-calculator/",
+    "/about/", "/examples/", "/compare-markets/", "/rent-vs-buy-calculator/", "/pmi-calculator/",
     "/closing-cost-calculator/", "/refinance-calculator/",
     "/mortgage-on-300k-house/", "/income-needed-for-400k-house/",
     ...regions.map((r) => `/states/${r.slug}/`),
     ...cities.map((c) => c.intendedUrl),
   ];
-  const lastmod = new Date().toISOString().slice(0, 10);
+  // Avoid claiming every page was substantively updated whenever CI rebuilds.
+  // Reintroduce <lastmod> only with per-page source/data revision tracking.
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
-    .map((u) => `  <url><loc>${T.SITE.url}${u}</loc><lastmod>${lastmod}</lastmod></url>`)
+    .map((u) => `  <url><loc>${T.SITE.url}${u}</loc></url>`)
     .join("\n")}\n</urlset>\n`;
   write("sitemap.xml", xml);
   // Launch-safe robots.txt: allow full crawl, expose the sitemap on the
