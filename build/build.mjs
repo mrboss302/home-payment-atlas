@@ -1,7 +1,7 @@
 // Build script: parses CSVs, normalizes regions, and renders the static site.
 import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { buildRegions, incomeNeeded, DEFAULTS } from "./data.mjs";
+import { buildRegions, incomeNeeded, monthlyPI, DEFAULTS } from "./data.mjs";
 import { buildCities } from "./cities.mjs";
 import * as T from "./templates.mjs";
 
@@ -76,6 +76,24 @@ const appSchema = (name, url, desc) => ({
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   description: desc,
 });
+
+function rateSensitivity(hv, tax) {
+  const monthly = (price, rate) => {
+    if (!Number.isFinite(price) || price <= 0) return null;
+    const loan = price * 0.8;
+    return monthlyPI(loan, rate, DEFAULTS.termYears) + price * tax / 1200 +
+      price * DEFAULTS.insuranceRatePct / 1200;
+  };
+  const rows = [DEFAULTS.rate - 1, DEFAULTS.rate, DEFAULTS.rate + 1].map((rate) => {
+    const cells = [hv.starter, hv.typical, hv.higher].map((price) =>
+      `<td>${price ? money(monthly(price, rate)) : "—"}</td>`
+    ).join("");
+    return `<tr${rate === DEFAULTS.rate ? ' class="featured"' : ""}><td>${pct(rate)}%${rate === DEFAULTS.rate ? " · default" : ""}</td>${cells}</tr>`;
+  }).join("");
+  const table = `<table class="data"><thead><tr><th>Illustrative fixed rate</th><th>Starter home</th><th>Typical home</th><th>Higher-budget home</th></tr></thead><tbody>${rows}</tbody></table>`;
+  const impact = Math.round(monthly(hv.typical, DEFAULTS.rate + 1) - monthly(hv.typical, DEFAULTS.rate));
+  return { table, impact };
+}
 
 // ---------------------------------------------------------------- HOMEPAGE
 function buildHome(regions) {
@@ -309,6 +327,7 @@ function buildStatePage(r, regions, citiesInState = []) {
   ], meta.canonical);
 
   const tax = r.taxRatePct;
+  const rateScenario = rateSensitivity(hv, tax);
   const ctx = r.context;
   // Per-state calculator defaults: same as global, but with the state tax rate + a note.
   const stateDefaults = Object.assign({}, DEFAULTS, {
