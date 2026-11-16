@@ -381,3 +381,22 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .compare-breakdown dt { font-size: .8rem; }
   .compare-breakdown dd { font-size: .85rem; white-space: normal; }
 }
+
+
+/* Archived city pages remain reachable, but are excluded from indexing while
+   source city CSVs are not being refreshed. Visible, non-alarming disclosure. */
+.archived-data-notice { border-bottom: 1px solid #dfc4a1; background: #fff0dd; color: #563b20; font-size: .86rem; line-height: 1.65; padding: 13px 0; }
+.archived-data-notice a { color: #6d4521; font-weight: 700; }
+.compare-spotlight {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  padding: clamp(24px, 4vw, 38px); background: linear-gradient(115deg,#e5f1e9,#fdf9ed);
+  border-color: #c9ddd3;
+}
+.compare-spotlight > div { min-width: 0; }
+.compare-spotlight h2 { margin: 4px 0 10px; }
+.compare-spotlight p { color: var(--ink-700); max-width: 68ch; margin: 0; }
+.compare-spotlight .btn { flex-shrink: 0; }
+@media (max-width: 740px) {
+  .compare-spotlight { display: block; }
+  .compare-spotlight .btn { margin-top: 20px; }
+}
