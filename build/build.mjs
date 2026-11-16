@@ -1,5 +1,5 @@
 // Build script: parses CSVs, normalizes regions, and renders the static site.
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { buildRegions, incomeNeeded, DEFAULTS } from "./data.mjs";
 import { buildCities } from "./cities.mjs";
@@ -26,6 +26,32 @@ function write(relPath, html) {
   const full = join(OUT, relPath);
   mkdirSync(join(full, ".."), { recursive: true });
   writeFileSync(full, html);
+}
+
+// Mark unrefreshed, checked-in city pages as historical rather than current.
+function markArchivedCityPages(cities) {
+  const allowed = new Set(cities.map((c) => c.stateSlug + "/" + c.citySlug));
+  const statesDir = join(OUT, "states");
+  if (!existsSync(statesDir)) return;
+  for (const state of readdirSync(statesDir, { withFileTypes: true })) {
+    if (!state.isDirectory()) continue;
+    const stateDir = join(statesDir, state.name);
+    for (const city of readdirSync(stateDir, { withFileTypes: true })) {
+      if (!city.isDirectory() || allowed.has(state.name + "/" + city.name)) continue;
+      const htmlPath = join(stateDir, city.name, "index.html");
+      if (!existsSync(htmlPath)) continue;
+      let html = readFileSync(htmlPath, "utf8");
+      if (!/<meta\s+name="robots"\s+content="noindex/i.test(html)) {
+        html = html.replace("</head>", '<meta name="robots" content="noindex,follow">\n</head>');
+      }
+      html = html.replace(/<!-- ad slot: [\s\S]*?-->\s*<div class="ad-slot[^"]*"[^>]*>[\s\S]*?<\/div>/g, "");
+      if (!html.includes("data-archived-city")) {
+        html = html.replace("</header>", `</header>
+<div class="archived-data-notice" data-archived-city><div class="wrap"><strong>Archived city estimate:</strong> This city's Zillow data is not included in the current update. Historical values and mortgage examples shown below may be outdated. For the latest available state-level data, <a href="/states/">browse state calculators</a> or <a href="/compare-markets/">compare states</a>.</div></div>`);
+      }
+      writeFileSync(htmlPath, html);
+    }
+  }
 }
 
 // Shared page shell.
@@ -1451,6 +1477,7 @@ build404();
 buildOgImage();
 buildIcons();
 buildSitemap(regions, cities);
+markArchivedCityPages(cities);
 
 // Report
 const found = Object.entries(detected).filter(([, v]) => v.found).map(([k]) => k);
