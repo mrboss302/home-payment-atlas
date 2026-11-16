@@ -183,7 +183,7 @@ ${T.adSlot("horizontal", "leaderboard, below the hero")}
   <div class="wrap">
     <div class="card" style="padding:32px">
       <h2>Built on real home-value data</h2>
-      <p style="color:var(--ink-700);max-width:65ch">Home-price examples come from <strong>Zillow Research</strong> Home Value Index (ZHVI) data — the typical value of homes in the 35th–65th percentile range, plus starter (lower-tier) and higher-budget (upper-tier) cuts. We use the latest available month (${regions[0].latestDate}) for each state. Read the <a href="methodology/index.html">methodology</a>.</p>
+      <p style="color:var(--ink-700);max-width:65ch">Home-price examples come from <strong>Zillow Research</strong> Home Value Index (ZHVI) data — the typical value of homes in the 35th–65th percentile range, plus starter (lower-tier) and higher-budget (upper-tier) cuts. We use the latest available observation for each state, as dated on its individual page. Read the <a href="methodology/index.html">methodology</a>.</p>
     </div>
   </div>
 </section>
@@ -465,6 +465,13 @@ ${T.adSlot("horizontal", "in-content, after first result")}
   <h2>Monthly payment examples in ${name}</h2>
   <p style="color:var(--ink-500);max-width:64ch">Estimated full monthly payment (principal, interest, ${name} property tax at ${pct(tax)}%, insurance and PMI) at ${pct(DEFAULTS.rate)}% over ${DEFAULTS.termYears} years. PMI applies under 20% down. These payment figures are <strong>calculated assumptions</strong>, not measured data.</p>
   <div class="card table-card" style="margin-top:16px">${pmtTable}</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2>How changing interest rates affects a home in ${name}</h2>
+  <p style="color:var(--ink-700);max-width:76ch">Under the default scenario, a one-percentage-point increase in the hypothetical mortgage rate would add about <strong>${money(rateScenario.impact)}/month</strong> to the estimated payment for a typical ${name} home. The table below compares starter, typical, and higher-budget home values at three illustrative fixed rates, holding the other assumptions constant.</p>
+  <div class="card table-card" style="margin-top:16px">${rateScenario.table}</div>
+  <p class="hint" style="margin-top:10px">Illustrative assumptions only, <strong>not live rate offers</strong>: ${DEFAULTS.termYears}-year mortgage, 20% down, ${pct(tax)}% statewide effective property-tax estimate, ${pct(DEFAULTS.insuranceRatePct)}% insurance, no PMI, and no HOA. Verify local costs and lender quotes. <a href="../../compare-markets/index.html?a=${r.slug}">Compare ${name} with another state</a>.</p>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -793,7 +800,7 @@ ${crumb.html}
     <li><strong>Source:</strong> Zillow Research Home Value Index (ZHVI), state level, smoothed and seasonally adjusted.</li>
     <li><strong>Typical</strong> value is the middle price tier (35th–65th percentile). <strong>Starter</strong> uses the lower tier and <strong>higher-budget</strong> the upper tier.</li>
     <li>We also surface single-family, condo/co-op, and bedroom-count values where available.</li>
-    <li>We extract the latest available month for each state (currently ${regions[0].latestDate}).</li>
+    <li>We extract the latest available non-empty month for each state and print its date alongside each figure. Update timing can differ across states.</li>
     <li>Values are Zillow's estimates and may not match current listings, appraisals, or lender valuations.</li>
   </ul>
 
