@@ -1,0 +1,26 @@
+name: Build quality and mortgage calculator tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check compare calculator JavaScript
+        run: node --check site/assets/market-compare.js
+      - name: Build from committed Zillow source datasets
+        run: node build/build.mjs
+      - name: Validate full site
+        run: node scripts/validate-site.mjs
+      - name: Check comparison math, data and site wiring
+        run: node scripts/test-market-compare.mjs
