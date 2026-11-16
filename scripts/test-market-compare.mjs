@@ -69,4 +69,27 @@ const sitemap = readFileSync("site/sitemap.xml", "utf8");
 assert.ok(sitemap.includes("https://homepaymentatlas.com/compare-markets/"), "Tool missing from sitemap");
 assert.ok(!sitemap.includes("<lastmod>"), "Sitemap should not make unsupported freshness claims");
 
+
+const dataUpdates = readFileSync("site/data-updates/index.html", "utf8");
+assert.match(dataUpdates, /<h1>Data updates and coverage<\/h1>/);
+assert.ok(dataUpdates.includes(data.latestDate), "Data updates page should report actual source month");
+assert.ok(sitemap.includes("https://homepaymentatlas.com/data-updates/"), "Data status missing from sitemap");
+const maryland = readFileSync("site/states/maryland/index.html", "utf8");
+assert.ok(maryland.includes("How changing interest rates affects a home in Maryland"),
+  "State page needs local rate-sensitivity analysis");
+assert.ok(maryland.includes("Compare Maryland"), "State page should link to comparison tool");
+for (const generated of ["site/index.html", "site/states/index.html", "site/states/maryland/index.html"]) {
+  assert.ok(!readFileSync(generated, "utf8").includes('class="ad-slot ad-horizontal"'),
+    "Empty advertisement placeholder in " + generated);
+}
+const oldCity = "site/states/maryland/baltimore/index.html";
+if (existsSync(oldCity) && !sitemap.includes("/states/maryland/baltimore/")) {
+  const old = readFileSync(oldCity, "utf8");
+  assert.match(old, /name="robots" content="noindex,follow"/,
+    "City pages without fresh source data must be noindexed");
+  assert.ok(old.includes("Archived city estimate"), "Archived city pages need a visible explanation");
+  assert.ok(!old.includes('class="ad-slot ad-horizontal"'),
+    "Archived city pages should not display empty ads");
+}
+
 console.log("Market comparison quality checks passed for", data.regions.length, "regions.");
